@@ -7,9 +7,8 @@
 // ----------------------------
 
 .c-panels{
-    padding: $space_l;
+    padding-left: $space_l;
     box-sizing: border-box;
-    margin-right: -#{$space_l};
     display: flex;
     flex-wrap: wrap;
     &__item{
@@ -23,6 +22,14 @@
         background: $font-color_sub;
         box-sizing: border-box;
         margin-bottom: $space_m;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transition: 1.0s;
+        cursor: pointer;
+        &:hover{
+            transition: 1.0s;
+            box-shadow: 0 10px 15px rgba(0,0,0, 0.5);
+        }
+
 
     }
     &__body{
