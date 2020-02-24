@@ -53,3 +53,10 @@
     </article>
 </main>
 @endsection
+
+@component('parts.footer', ['msgFlg' => true])
+    @slot('authPage')
+    {{ 'l-footer__auth'}}  
+    @endslot
+
+@endcomponent

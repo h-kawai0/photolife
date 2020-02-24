@@ -3096,6 +3096,19 @@ img {
   font-family: "Kokoro";
 }
 
+.l-footer__auth {
+  background: #333;
+}
+
+.l-footer__link {
+  color: #fafafa;
+  text-decoration: underline;
+}
+
+.l-footer__link:hover {
+  text-decoration: none;
+}
+
 .l-header {
   width: 100%;
   height: 60px;

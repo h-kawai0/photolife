@@ -16,4 +16,14 @@
     &__title{
         font-family: $font-family_logo;
     }
+    &__auth{
+        background: $footer-color_sub;
+    }
+    &__link{
+        color : $font-color_sub;
+        text-decoration: underline;
+        &:hover{
+            text-decoration: none;
+        }
+    }
 }

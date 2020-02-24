@@ -233,4 +233,6 @@
 
 @endsection
 
-@include('parts.footer')
+@component('parts.footer', ['msgFlg' => false])
+    
+@endcomponent
