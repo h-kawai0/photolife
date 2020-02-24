@@ -8,9 +8,13 @@
 
 .c-auth{
 
-    width: 80%;
+    width: 100%;
     margin: 100px auto;
     color: $font-color_sub;
+    &__form{
+        width: 50%;
+        margin: 0 auto;
+    }
     &__title{
         text-align: center;
         font-size: $font-size_4l;

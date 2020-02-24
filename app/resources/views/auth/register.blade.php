@@ -1,77 +1,56 @@
-@extends('layouts.app')
+@extends('layouts.common')
 
+@section('title', '新規登録')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<main class="l-main p-auth">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <article>
+        <section class="c-auth">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+        <a href="{{ route('top')}}">
+        <h1 class="c-auth__title">ふぉとらいふ</h1>
+        </a>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <form method="POST" action="{{ route('register') }}" class="c-auth__form">
+    @csrf
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    <input type="text" class="c-auth__input @error('name') c-auth--error @enderror" name="name" placeholder="お名前" value="{{ old('name') }}" required autofocus>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    @error('name')
+    <span class="c-form--err-msg" role="alert">{{ $message }}</span>
+    @enderror
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+    <input type="text" name="email" class="c-auth__input @error('email') c-auth--error @enderror" value="{{ old('email')}}" required placeholder="Email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    @error('email')
+    <span class="c-auth--alert" role="alert">
+        {{ $message }}
+    </span>
+    @enderror
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+<input type="password" name="password" class="c-auth__input @error('password') c-auth--error @enderror" required autocomplete="new-password" placeholder="パスワード">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+@error('password')
+<span class="c-auth--alert" role="alert">
+    {{ $message }}
+</span>
+@enderror
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<input type="password" name="password_confirmation" class="c-auth__input" required autocomplete="new-password" placeholder="パスワード（確認用）">
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+<input type="submit" value="登録" class="c-auth__btn">
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    </form>
+        </section>
+    </article>
+</main>
 @endsection
+
+@component('parts.footer', ['msgFlg' => 1])
+
+@slot('authPage')
+{{ 'l-footer__auth'}}
+    
+@endslot
+    
+@endcomponent

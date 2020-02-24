@@ -3129,9 +3129,14 @@ img {
 }
 
 .c-auth {
-  width: 80%;
+  width: 100%;
   margin: 100px auto;
   color: #fafafa;
+}
+
+.c-auth__form {
+  width: 50%;
+  margin: 0 auto;
 }
 
 .c-auth__title {
