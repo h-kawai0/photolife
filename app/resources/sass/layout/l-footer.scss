@@ -1,0 +1,19 @@
+// =======================
+// layout
+// =======================
+
+// -----------------------
+// footer
+// -----------------------
+
+.l-footer{
+    width: 100%;
+    background: $footer-color_main;
+    text-align: center;
+    color: $font-color_sub;
+    padding: $space_2l;
+    box-sizing: border-box;
+    &__title{
+        font-family: $font-family_logo;
+    }
+}

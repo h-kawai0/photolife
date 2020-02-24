@@ -1,0 +1,113 @@
+// ============================
+// base
+// ============================
+
+// ============================
+// 変数
+// ============================
+
+// ----------------------------
+// color
+// ----------------------------
+
+$font-color_default: #333;
+$font-color_sub: #fafafa;
+
+$back-ground-color_main: #efeae5;
+
+$btn-color_main: #226e69;
+$btn-color_sub: #c04020;
+
+$header_color_main: #fafafa;
+$footer_color_main:#726a31;
+$footer_color_sub: #333;
+
+// ----------------------------
+// font-size
+// ----------------------------
+
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_2l: 24px;
+$font-size_3l: 30px;
+$font-size_4l: 38px;
+
+// ----------------------------
+// webFont
+// ----------------------------
+
+$font-family_main: 'Quicksand';
+$font-family_logo: "Kokoro";
+
+// ----------------------------
+// margin, padding
+// ----------------------------
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_2l: 20px;
+$space_3l: 30px;
+$space_4l: 40px;
+
+// ----------------------------
+// マップ型変数
+// ----------------------------
+
+$breakpoints: (
+    'md' : 'screen and (min-width: 481px)',
+    'lg' : 'screen and (min-width: 960px)',
+) !default;
+
+// ============================
+// mixin
+// ============================
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// ============================
+// html, body etc...
+// ============================
+
+html, body{
+    line-height: 1.6;
+    font-size: $font-size_m;
+    color: $font-color_default;
+    font-family: $font-family_main, Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    text-size-adjust: 100%;
+    letter-spacing: 0.1em;
+    max-width: 480px;
+    background: $back-ground-color_main;
+}
+
+body{
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    transition: 1.0s;
+}
+
+a:hover{
+    transition: 1.0s;
+}
+
+img{
+    width: 100%;
+    vertical-align: bottom;
+}

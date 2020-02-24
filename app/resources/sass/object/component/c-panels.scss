@@ -1,0 +1,48 @@
+// ============================
+// component
+// ============================
+
+// ----------------------------
+// panels
+// ----------------------------
+
+.c-panels{
+    padding: $space_l;
+    box-sizing: border-box;
+    margin-right: -#{$space_l};
+    display: flex;
+    flex-wrap: wrap;
+    &__item{
+        box-sizing: border-box;
+        margin-bottom: $space_3l;
+        width: calc(50% - #{$space_l});
+        margin-right: $space_l;
+    }
+    &__head{
+        padding: $space_s;
+        background: $font-color_sub;
+        box-sizing: border-box;
+        margin-bottom: $space_m;
+
+    }
+    &__body{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $space_s;
+    }
+    &__title{
+    }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    &__avator{
+        &-pic{
+            width: 20px;
+            display: inline-block;
+            margin-right: $space_s;
+        }
+    }
+}
