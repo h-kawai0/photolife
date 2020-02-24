@@ -3115,6 +3115,70 @@ img {
   width: 100%;
 }
 
+.c-auth {
+  width: 80%;
+  margin: 100px auto;
+  color: #fafafa;
+}
+
+.c-auth__title {
+  text-align: center;
+  font-size: 38px;
+  color: #fafafa;
+  font-family: "Kokoro";
+  margin-bottom: 20px;
+}
+
+.c-auth__input {
+  display: block;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+.c-auth__btn {
+  background: #226e69;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  display: block;
+  color: #fafafa;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 1s;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.c-auth__btn:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+}
+
+.c-auth__check {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.c-auth__link {
+  color: #fafafa;
+  text-decoration: underline;
+  transition: 1s;
+}
+
+.c-auth__link:hover {
+  text-decoration: none;
+}
+
+.c-auth__txt {
+  display: block;
+}
+
 .c-panels {
   padding-left: 15px;
   box-sizing: border-box;
@@ -3161,6 +3225,10 @@ img {
   width: 20px;
   display: inline-block;
   margin-right: 5px;
+}
+
+.p-auth {
+  background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }
 
 .p-header__title {

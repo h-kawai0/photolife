@@ -1,0 +1,64 @@
+// ===========================
+// component
+// ===========================
+
+// ---------------------------
+// auth
+// ---------------------------
+
+.c-auth{
+
+    width: 80%;
+    margin: 100px auto;
+    color: $font-color_sub;
+    &__title{
+        text-align: center;
+        font-size: $font-size_4l;
+        color: $font-color_sub;
+        font-family: $font-family_logo;
+        margin-bottom: $space_2l;
+    }
+    &__input{
+        display: block;
+        width: 100%;
+        border: none;
+        box-sizing: border-box;
+        padding: $space_m;
+        margin-bottom: $space_2l;
+        font-size: $font-size_m;
+        border-radius: 30px;
+    }
+    &__btn{
+        background: $btn-color_main;
+        width: 100%;
+        border: none;
+        padding: $space_m;
+        display: block;
+        color: $font-color_sub;
+        margin-top: $space_2l;
+        font-size: $font-size_m;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: 1.0s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        &:hover{
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            transition: 1.0s;
+        }
+    }
+    &__check{
+        display: inline-block;
+        vertical-align: top;
+    }
+    &__link{
+        color: $font-color_sub;
+        text-decoration: underline;
+        transition: 1.0s;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    &__txt{
+        display: block;
+    }
+}
