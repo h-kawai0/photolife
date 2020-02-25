@@ -1,0 +1,41 @@
+// ==========================
+// project
+// ==========================
+
+// --------------------------
+// mypage
+// --------------------------
+
+.p-mypage{
+    padding-left: $space_l;
+    padding-right: $space_l;
+    box-sizing: border-box;
+    &__info{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: $space_l;
+    }
+    &__avator{
+        width: 100px;
+        height: 100px;
+        margin-right: $space_2l;
+    }
+    &__name{
+        font-size: $font-size_l;
+        font-weight: bold;
+    }
+    &__btn{
+        border: none;
+        width: 100%;
+        padding: $space_l;
+        background: $btn-color_main;
+        color: $font-color_sub;
+        margin-bottom: $space_l;
+        font-size: $font-size_m;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    &__comment{
+        word-wrap: break-word;
+    }
+}

@@ -3080,6 +3080,7 @@ a:hover {
 
 img {
   width: 100%;
+  height: 100%;
   vertical-align: bottom;
 }
 
@@ -3462,11 +3463,50 @@ img {
   padding: 5px;
 }
 
+.p-mypage {
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.p-mypage__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.p-mypage__avator {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.p-mypage__name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.p-mypage__btn {
+  border: none;
+  width: 100%;
+  padding: 15px;
+  background: #226e69;
+  color: #fafafa;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.p-mypage__comment {
+  word-wrap: break-word;
+}
+
 .u-text--large {
   font-size: 38px;
 }
 
 .u-avator--radius {
-  border-radius: 30px;
+  border-radius: 50%;
 }
 

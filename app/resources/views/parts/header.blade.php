@@ -1,7 +1,7 @@
 @section('header')
 <header class="l-header">
 
-    <a class="p-header__logo" href="">
+<a class="p-header__logo" href="{{ route('top')}}">
         <h1 class="p-header__title">ふぉとらいふ</h1>
     </a>
 

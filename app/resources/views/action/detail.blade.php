@@ -76,6 +76,20 @@
 
                 </div>
 
+                <div class="p-detail__chat-l">
+
+                    <a class="p-detail__chat-img">
+                        <img class="u-avator--radius" src="{{ asset("images/alex.jpg") }}" alt="">
+                        <p class="p-detail__chat-user">MASA</p>
+                    </a>
+
+                    <div class="p-detail__chat-txt">
+                        <p>くいてえええええええ</p>
+                    </div>
+
+                </div>
+
+
             </div>
 
             <div class="p-detail__msg">

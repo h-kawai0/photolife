@@ -19,6 +19,14 @@ Route::get('/detail', function() {
     return view('action.detail');
 })->name('detail');
 
+Route::get('/mypage', function() {
+    return view('action.mypage');
+})->name('mypage');
+
+Route::get('/profedit', function () {
+    return view('action.profEdit');
+})->name('profEdit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
