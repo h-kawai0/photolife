@@ -1,0 +1,59 @@
+// ============================
+// project
+// ============================
+
+// ----------------------------
+// profEdit
+// ----------------------------
+
+.p-profEdit{
+    width: 100%;
+    padding-left: $space_l;
+    padding-right: $space_l;
+    box-sizing: border-box;
+
+    &__form{
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    &__avator{
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        margin-bottom: $space_2l;
+    }
+    &__input{
+        width: 100%;
+        display: block;
+        border: none;
+        padding: $space_l;
+        box-sizing: border-box;
+        border-radius: 3px;
+        margin-bottom: $space_l;
+        font-size: $font-size_m;
+
+    }
+    &__txt{
+        width: 100%;
+        display: block;
+        border: none;
+        padding: $space_l;
+        box-sizing: border-box;
+        height: 200px;
+        border-radius: 3px;
+        margin-bottom: $space_l;
+        font-size: $font-size_m;
+    }
+    &__btn{
+        width: 100%;
+        display: block;
+        border: none;
+        padding: $space_m;
+        border-radius: 3px;
+        font-size: $font-size_m;
+        color: $font-color_sub;
+        background: $btn-color_main;
+        margin-bottom: $space_l;
+    }
+}

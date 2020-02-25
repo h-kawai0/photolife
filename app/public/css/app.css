@@ -3502,6 +3502,61 @@ img {
   word-wrap: break-word;
 }
 
+.p-profEdit {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.p-profEdit__form {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.p-profEdit__avator {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.p-profEdit__input {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.p-profEdit__txt {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+  height: 200px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.p-profEdit__btn {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #fafafa;
+  background: #226e69;
+  margin-bottom: 15px;
+}
+
 .u-text--large {
   font-size: 38px;
 }

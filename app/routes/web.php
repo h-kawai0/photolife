@@ -27,6 +27,10 @@ Route::get('/profedit', function () {
     return view('action.profEdit');
 })->name('profEdit');
 
+Route::get('/photoedit', function () {
+    return view('action.photoEdit');
+})->name('photoEdit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
