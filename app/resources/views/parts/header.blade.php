@@ -2,7 +2,6 @@
 <header class="l-header">
 
     <a class="p-header__logo" href="">
-        <i class="fa fa-camera p-header__icon" aria-hidden="true"></i>
         <h1 class="p-header__title">ふぉとらいふ</h1>
     </a>
 
