@@ -3502,6 +3502,52 @@ img {
   word-wrap: break-word;
 }
 
+.p-photoEdit {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.p-photoEdit__pic {
+  margin-bottom: 15px;
+}
+
+.p-photoEdit__input {
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.p-photoEdit__txt {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  border: none;
+  height: 200px;
+}
+
+.p-photoEdit__btn {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 30px;
+  background: #226e69;
+  color: #fafafa;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
 .p-profEdit {
   width: 100%;
   padding-left: 15px;

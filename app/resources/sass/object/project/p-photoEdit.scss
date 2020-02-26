@@ -1,0 +1,49 @@
+// =========================
+// project
+// =========================
+
+// -------------------------
+// photoEdit
+// -------------------------
+
+.p-photoEdit{
+    width: 100%;
+    padding-left: $space_m;
+    padding-right: $space_m;
+    box-sizing: border-box;
+    &__pic{
+        margin-bottom: $space_l;
+    }
+    &__input{
+        display: block;
+        width: 100%;
+        border: none;
+        font-size: $font-size_m;
+        padding: $space_m;
+        margin-bottom: $space_l;
+        box-sizing: border-box;
+        border-radius: 3px;
+    }
+    &__txt{
+        display: block;
+        width: 100%;
+        padding: $space_m;
+        margin-bottom: $space_l;
+        box-sizing: border-box;
+        border-radius: 3px;
+        font-size: $font-size_m;
+        border: none;
+        height: 200px;
+    }
+    &__btn{
+        width: 100%;
+        display: block;
+        padding: $space_l;
+        font-size: $font-size_l;
+        border-radius: 30px;
+        background: $btn-color_main;
+        color: $font-color_sub;
+        margin-bottom: $space_l;
+        cursor: pointer;
+    }
+}
