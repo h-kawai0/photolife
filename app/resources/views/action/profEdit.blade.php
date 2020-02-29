@@ -10,7 +10,7 @@
 
     <article class="p-profEdit">
         
-        <form class="p-profEdit__form">
+        <form method="POST" class="p-profEdit__form">
 
             <div class="p-profEdit__avator">
                 <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">

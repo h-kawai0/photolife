@@ -1,21 +1,40 @@
 <?php
+use Illuminate\Support\Facades\Event;
+use Illuminate\Auth\Events\Registered;
 
-namespace Tests\Feature;
-
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-class ExampleTest extends TestCase
+class AuthTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
+    *  会員登録のテスト
+    *
+    */
+    public function testRegister()
     {
-        $response = $this->get('/');
+        Event::fake();
 
-        $response->assertStatus(200);
+        //新規会員情報の送信
+        $user = factory(\App\User::class)->make();
+        $user = $user->toArray();
+        $user['password'] = 'testtest';
+        $user['password_confirmation'] = 'testtest';
+
+        $response = $this->post('/register', $user);
+ 
+        //homeページへのリダイレクトをアサート
+        $response->assertRedirect('/home');
+
+        //送信したユーザ情報がDBにあることをアサート
+        $this->assertDatabaseHas('users', [
+            'name' => $user['name'],
+            'email' => $user['email']
+        ]);
+
+        //イベントがディスパッチされたことをアサート
+        Event::assertDispatched(Registered::class, function ($event) use ($user) {
+            return $event->user->email === $user['email'];
+        });
+
+        //イベントが1回だけディスパッチされたことをアサート
+        Event::assertDispatched(Registered::class, 1);
     }
 }

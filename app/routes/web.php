@@ -19,9 +19,7 @@ Route::get('/detail', function() {
     return view('action.detail');
 })->name('detail');
 
-Route::get('/mypage', function() {
-    return view('action.mypage');
-})->name('mypage');
+Route::get('/mypage', 'MypageController@mypage')->name('mypage');
 
 Route::get('/profedit', function () {
     return view('action.profEdit');
@@ -31,10 +29,15 @@ Route::get('/photoedit', function () {
     return view('action.photoEdit');
 })->name('photoEdit');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/delete', 'UserDeleteController@userDelete')->name('userDelete');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

@@ -3507,6 +3507,7 @@ img {
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .p-photoEdit__pic {
@@ -3609,5 +3610,9 @@ img {
 
 .u-avator--radius {
   border-radius: 50%;
+}
+
+.u-btn--alert {
+  background: #c04020;
 }
 

@@ -23,6 +23,11 @@
                 </div>
             </div>
             <button class="p-mypage__btn">プロフィールを編集する</button>
+
+        <form action="{{ route('userDelete') }}" method="POST">
+            @csrf
+            <button class="p-mypage__btn u-btn--alert" onclick='return confirm("一度実行するとこの操作は取り消せません。本当にアカウントを削除しますか?");'>退会する</button>
+        </form>
         </div>
 
 
