@@ -19,11 +19,13 @@ Route::get('/detail', function() {
     return view('action.detail');
 })->name('detail');
 
-Route::get('/mypage', 'MypageController@mypage')->name('mypage');
 
-Route::get('/profedit', function () {
-    return view('action.profEdit');
-})->name('profEdit');
+// マイページ関連
+Route::get('/mypage', 'ShowMypageController@showMypage')->name('showMypage');
+
+Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
+
+Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
 
 Route::get('/photoedit', function () {
     return view('action.photoEdit');

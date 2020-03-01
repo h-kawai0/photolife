@@ -18,11 +18,13 @@
                     <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">
                 </div>
                 <div class="p-mypage__description">
-                    <div class="p-mypage__name">たくや</div>
-                    <div class="p-mypage__comment">諦めません、するまでは!!</div>
+                <div class="p-mypage__name">{{ $user->name }}</div>
+                <div class="p-mypage__comment">{{ $user->profile }}</div>
                 </div>
             </div>
+        <a href="{{ route('profEdit')}}">
             <button class="p-mypage__btn">プロフィールを編集する</button>
+        </a>
 
         <form action="{{ route('userDelete') }}" method="POST">
             @csrf
