@@ -14,13 +14,13 @@
     <form method="POST" action="{{ route('register') }}" class="c-auth__form">
     @csrf
 
-    <input type="text" class="c-auth__input @error('name') c-auth--error @enderror" name="name" placeholder="お名前" value="{{ old('name') }}" required autofocus>
+    <input type="text" class="c-auth__input @error('name') c-auth--err @enderror" name="name" placeholder="お名前" value="{{ old('name') }}" required autofocus>
 
     @error('name')
-    <span class="c-form--err-msg" role="alert">{{ $message }}</span>
+    <span class="c-auth--alert" role="alert">{{ $message }}</span>
     @enderror
 
-    <input type="text" name="email" class="c-auth__input @error('email') c-auth--error @enderror" value="{{ old('email')}}" required placeholder="Email">
+    <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email')}}" required placeholder="Email">
 
     @error('email')
     <span class="c-auth--alert" role="alert">
@@ -28,7 +28,7 @@
     </span>
     @enderror
 
-<input type="password" name="password" class="c-auth__input @error('password') c-auth--error @enderror" required autocomplete="new-password" placeholder="パスワード">
+<input type="password" name="password" class="c-auth__input @error('password') c-auth--err @enderror" required autocomplete="new-password" placeholder="パスワード">
 
 @error('password')
 <span class="c-auth--alert" role="alert">

@@ -3198,6 +3198,14 @@ img {
   display: block;
 }
 
+.c-auth--err {
+  background: #f7dcd9;
+}
+
+.c-auth--alert {
+  color: red;
+}
+
 .c-panels {
   padding-left: 15px;
   box-sizing: border-box;

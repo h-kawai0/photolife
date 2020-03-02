@@ -65,4 +65,10 @@
     &__txt{
         display: block;
     }
+    &--err{
+        background: $err_color;
+    }
+    &--alert{
+        color: $err_color_2;
+    }
 }
