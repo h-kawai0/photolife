@@ -12,6 +12,7 @@ class ProfEditMypageController extends Controller
 
         $user = Auth::user();
 
+
         return view('action.profEdit', compact('user'));
     }
 }

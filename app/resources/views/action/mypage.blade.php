@@ -15,7 +15,7 @@
 
             <div class="p-mypage__info">
                 <div class="p-mypage__avator">
-                    <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">
+                    <img class="u-avator--radius" src="@if($is_pic)/storage/images/profile/{{$user->pic}} @else {{asset('images/profile/person.jpeg') }} @endif" alt="">
                 </div>
                 <div class="p-mypage__description">
                 <div class="p-mypage__name">{{ $user->name }}</div>

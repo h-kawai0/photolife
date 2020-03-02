@@ -12,9 +12,16 @@ class ShowMypageController extends Controller
         $user = Auth::user();
         $pictures = Auth::user()->pictures();
 
+        if( !empty($user->pic)){
+
+            $is_pic = true;
+        }else{
+            $is_pic = false;
+        }
+
         // dd($pictures);
         // dd($user);
 
-        return view('action.mypage', compact('pictures', 'user'));
+        return view('action.mypage', compact('pictures', 'user', 'is_pic'));
     }
 }

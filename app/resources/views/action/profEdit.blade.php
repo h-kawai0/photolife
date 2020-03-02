@@ -8,7 +8,6 @@
 
 <div id="app">
 
-    <?php echo phpinfo(); ?>
     <article class="p-profEdit">
 
     <form method="POST" enctype="multipart/form-data" class="p-profEdit__form" action="{{ route('profUpdate') }}">
@@ -17,6 +16,11 @@
 
             <div class="p-profEdit__avator">
                 <input type="file" name="pic">
+                @error('pic')
+                <span class="p-profEdit--err">
+                    {{ $message }}
+                </span>
+                @enderror
                 <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">
             </div>
 
@@ -25,16 +29,29 @@
                     value="{{ $errors->has('*') ? old('name'): ($user->name) ?? '' }}" name="name" placeholder="名前"
                     autofocus required>
             </label>
+            @error('name')
+            <span class="p-profEdit--err" role="alert">
+                {{ $message}}
+            </span>
+            @enderror
 
             <label>Email
                 <input type="email" class="p-profEdit__input"
                     value="{{ $errors->has('*') ? old('email'): ($user->email) ?? '' }}" name="email"
                     placeholder="Email" required>
             </label>
+            @error('email')
+            <span class="p-profEdit--err" role="alert">
+                {{ $message }}
+            </span>
+            @enderror
 
             <label>自己紹介
                 <textarea class="p-profEdit__txt" name="profile">{{ $errors->has('*') ? old('profile'): ($user->profile) ?? '' }}</textarea>
             </label>
+            @error('profile')
+            {{ $message }}
+            @enderror
 
             <input type="submit" class="p-profEdit__btn" value="保存">
 

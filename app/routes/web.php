@@ -11,29 +11,37 @@
 |
 */
 
+// TOP画面
 Route::get('/', function () {
     return view('action.index');
 })->name('top');
 
+// 写真詳細画面
 Route::get('/detail', function() {
     return view('action.detail');
 })->name('detail');
 
 
-// マイページ関連
-Route::get('/mypage', 'ShowMypageController@showMypage')->name('showMypage');
-
-Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
-
-Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
-
-Route::get('/photoedit', function () {
-    return view('action.photoEdit');
-})->name('photoEdit');
-
-Route::post('/delete', 'UserDeleteController@userDelete')->name('userDelete');
+Route::group(['middleware' => 'auth'], function () {
+    
+    // マイページ関連
+    Route::get('/mypage', 'ShowMypageController@showMypage')->name('showMypage');
+    
+    Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
+    
+    Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
+    
+    Route::get('/photoedit', function () {
+        return view('action.photoEdit');
+    })->name('photoEdit');
+    
+    Route::post('/delete', 'UserDeleteController@userDelete')->name('userDelete');
+    
+});
 
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
