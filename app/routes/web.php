@@ -12,6 +12,9 @@
 */
 
 // TOP画面
+
+use App\Http\Controllers\showPassEditController;
+
 Route::get('/', function () {
     return view('action.index');
 })->name('top');
@@ -28,8 +31,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mypage', 'ShowMypageController@showMypage')->name('showMypage');
     
     Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
-    
+
     Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
+
+
+    Route::get('/mypage/password', 'showPassEditController')->name('passEdit');
+
+    Route::put('/mypage', 'updatePassEditController')->name('passUpdate');
+    
     
     Route::get('/photoedit', function () {
         return view('action.photoEdit');
