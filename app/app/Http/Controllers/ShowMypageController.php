@@ -19,9 +19,6 @@ class ShowMypageController extends Controller
             $is_pic = false;
         }
 
-        // dd($pictures);
-        // dd($user);
-
         return view('action.mypage', compact('pictures', 'user', 'is_pic'));
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\PassRequest;
 use Illuminate\Support\Facades\Auth;
+use Mail;
+use App\Mail\ChangePasswordMail;
 
 class updatePassEditController extends Controller
 {
@@ -21,6 +23,9 @@ class updatePassEditController extends Controller
         $user->password = bcrypt($request->pass_new);
 
         $user->save();
+
+        Mail::to($user)
+        ->send(new ChangePasswordMail($user));
 
         return redirect('mypage');
     }
