@@ -62,6 +62,9 @@
             text-decoration: none;
         }
     }
+    &__desc{
+        margin-bottom: $space_m;
+    }
     &__txt{
         display: block;
     }

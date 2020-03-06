@@ -19,6 +19,7 @@ class ShowMypageController extends Controller
             $is_pic = false;
         }
 
+
         return view('action.mypage', compact('pictures', 'user', 'is_pic'));
     }
 }

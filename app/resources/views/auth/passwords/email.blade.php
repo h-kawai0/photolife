@@ -1,47 +1,45 @@
-@extends('layouts.app')
+@extends('layouts.common')
+
+@section('title', 'passRemindSend')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<main class="l-main p-auth">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+    <article>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        <section class="c-auth">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <a href="{{ route('top') }}">
+                <h1 class="c-auth__title">ふぉとらいふ</h1>
+            </a>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+            
+            <form method="POST" class="c-auth__form" action="{{ route('password.email') }}">
+                @csrf
+                
+                <p class="c-auth__desc">入力されたEmailへパスワード、リセット用のURLを送信します。</p>
+            <input type="email" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email') }}" required autofocus placeholder="Email">
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+            @error('email')
+            <span class="c-auth--alert" role="alert">
+                {{ $message }}
+            </span>
+            @enderror
+
+            <input type="submit" value="送信する" class="c-auth__btn">
+
+            </form>
+        </section>
+    </article>
+</main>
+
 @endsection
+
+@component('parts.footer', ['msgFlg' => 2])
+
+@slot('authPage')
+{{ 'l-footer__auth'}}
+@endslot
+
+@endcomponent

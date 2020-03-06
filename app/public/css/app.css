@@ -3194,6 +3194,10 @@ img {
   text-decoration: none;
 }
 
+.c-auth__desc {
+  margin-bottom: 10px;
+}
+
 .c-auth__txt {
   display: block;
 }
