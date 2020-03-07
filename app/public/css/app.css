@@ -3209,6 +3209,7 @@ img {
 .c-auth--alert {
   color: red;
   display: block;
+  text-align: center;
 }
 
 .c-panels {

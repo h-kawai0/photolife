@@ -14,12 +14,22 @@
                 <h1 class="c-auth__title">ふぉとらいふ</h1>
             </a>
 
+            @if (session('status'))
+            <div class="c-auth--alert" role="alert">
+                {{ session('status') }}
+            </div>
+                
+            @endif
+
             
             <form method="POST" class="c-auth__form" action="{{ route('password.email') }}">
                 @csrf
                 
-                <p class="c-auth__desc">入力されたEmailへパスワード、リセット用のURLを送信します。</p>
-            <input type="email" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email') }}" required autofocus placeholder="Email">
+                <p class="c-auth__desc">入力されたEmailへパスワードリセット用のURLを送信します。</p>
+                <label>
+                    Email
+                    <input type="email" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email') }}" required autofocus placeholder="Email">
+                </label>
 
             @error('email')
             <span class="c-auth--alert" role="alert">

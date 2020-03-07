@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Notifications\JaPasswordReset;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -49,4 +51,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Picture');
     }
     
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new JaPasswordReset($token));
+    }
+
 }

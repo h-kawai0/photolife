@@ -15,17 +15,23 @@
             
             <form method="POST" action="{{ route('login') }}" class="c-auth__form">
                 @csrf
-                <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror"
-                    value="{{ old('email') }}" required autofocus placeholder="Email">
 
+                <label>
+                    Email
+                    <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror"
+                    value="{{ old('email') }}" required autofocus placeholder="Email">
+                </label>
+                    
                 @error('email')
                 <span class="c-auth--alert" role="alert">
                     {{ $message }}
                 </span>
                 @enderror
 
-
-                <input type="password" name="password" class="c-auth__input @error ('password') c-auth--err @enderror" placeholder="パスワード" required>
+                <label>
+                    パスワード
+                    <input type="password" name="password" class="c-auth__input @error ('password') c-auth--err @enderror" placeholder="パスワード" required>
+                </label>
 
                 @error('password')
                 <span class="c-auth--alert" role="alert">
