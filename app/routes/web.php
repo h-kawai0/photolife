@@ -40,9 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/mypage', 'updatePassEditController')->name('passUpdate');
     
     
-    Route::get('/photoedit', function () {
-        return view('action.photoEdit');
-    })->name('photoEdit');
+    Route::get('/photoedit', 'ShowPhotoEditController')->name('photoEdit');
+
+    Route::post('/photoedit', 'CreatePhotoEditController')->name('createPhotoEdit');
     
     Route::post('/delete', 'UserDeleteController@userDelete')->name('userDelete');
     

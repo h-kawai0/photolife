@@ -17,7 +17,7 @@
             <div class="p-profEdit__avator">
                 <input type="file" name="pic">
                 @error('pic')
-                <span class="p-profEdit--err">
+                <span class="p-profEdit--alert">
                     {{ $message }}
                 </span>
                 @enderror
