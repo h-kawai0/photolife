@@ -13,7 +13,7 @@
     <form method="POST" action="{{ route('createPhotoEdit') }}" class="p-photoEdit" enctype="multipart/form-data">
             @csrf
             <input type="file" name="pic">
-            
+
             @error('pic')
             <span class="p-photoEdit--alert">
                 {{ $message }}
@@ -47,8 +47,14 @@
             @for($i = 1; $i <= 10; $i++)
             <label>
                 タグ{{$i}}
-            <input type="text" name="tag{{$i}}" class="p-photoEdit__input" value="{{ old('tag'.$i)}}">
+            <input type="text" name="tags[]" class="p-photoEdit__input @error('tags[]'.$i) p-photoEdit--err @enderror" value="{{ old('tags[]'.$i) }}">
             </label>
+
+            @error('tags[]'.$i)
+            <span class="p-photoEdit--alert">
+                {{ $message }}
+            </span>
+            @enderror
             @endfor
 
             <input type="submit" class="p-photoEdit__btn" value="保存">

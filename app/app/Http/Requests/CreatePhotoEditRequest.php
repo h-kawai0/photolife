@@ -27,6 +27,7 @@ class CreatePhotoEditRequest extends FormRequest
             'pic' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048' ],
             'title' => ['required', 'string', 'max:255'],
             'detail' => ['string', 'max:255'],
+            'tags' => ['max:255']
 
         ];
     }

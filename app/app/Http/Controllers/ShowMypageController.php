@@ -20,6 +20,8 @@ class ShowMypageController extends Controller
         }
 
 
+
+
         return view('action.mypage', compact('pictures', 'user', 'is_pic'));
     }
 }
