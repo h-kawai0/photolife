@@ -46,15 +46,16 @@
 
         <div class="c-panels">
 
+            @foreach ($pictures as $picture)
 
             <article class="c-panels__item">
                 <a href="" class="">
                     <div class="c-panels__head">
-                        <img src="{{ asset("images/slava.jpg")}}" alt="">
+                        <img src="/storage/images/photo/{{$picture->pic }}" alt="{{ $picture->title }}">
                     </div>
                 </a>
                 <div class="c-panels__body">
-                    <h2 class="c-panels__title">夕陽</h2>
+                <h2 class="c-panels__title">{{ $picture->title }}</h2>
                     <div class="c-panels__favorite-wrapper">
                         <i class="fa fa-star c-panels__favorite-icon"></i>
                     </div>
@@ -63,98 +64,18 @@
                     <div class="c-panels__info">
                         <a class="c-panels__avator">
                             <div class="c-panels__avator-pic">
-                                <img src="{{ asset("images/alex.jpg")}}" alt="" class="u-avator--radius">
+                            <img src="/storage/images/profile/{{$picture->user->pic }}" alt="" class="u-avator--radius">
                             </div>
-                            <span class="c-panels__author">YUTO</span>
+                        <span class="c-panels__author">{{ $picture->user->name }}</span>
                         </a>
                     </div>
                     <div class="c-panels__date">
-                        2020年2月24日
+                        {{ $picture->created_at->format('Y年m月d日')}}
                     </div>
                 </div>
             </article>
 
-            <article class="c-panels__item">
-                <a href="" class="">
-                    <div class="c-panels__head">
-                        <img src="{{ asset("images/slava.jpg")}}" alt="">
-                    </div>
-                </a>
-                <div class="c-panels__body">
-                    <h2 class="c-panels__title">夕陽</h2>
-                    <div class="c-panels__favorite-wrapper">
-                        <i class="fa fa-star c-panels__favorite-icon"></i>
-                    </div>
-                </div>
-                <div class="c-panels__footer">
-                    <div class="c-panels__info">
-                        <a class="c-panels__avator">
-                            <div class="c-panels__avator-pic">
-                                <img src="{{ asset("images/alex.jpg")}}" alt="" class="u-avator--radius">
-                            </div>
-                            <span class="c-panels__author">YUTO</span>
-                        </a>
-                    </div>
-                    <div class="c-panels__date">
-                        2020年2月24日
-                    </div>
-                </div>
-            </article>
-
-            <article class="c-panels__item">
-                <a href="" class="">
-                    <div class="c-panels__head">
-                        <img src="{{ asset("images/slava.jpg")}}" alt="">
-                    </div>
-                </a>
-                <div class="c-panels__body">
-                    <h2 class="c-panels__title">夕陽</h2>
-                    <div class="c-panels__favorite-wrapper">
-                        <i class="fa fa-star c-panels__favorite-icon"></i>
-                    </div>
-                </div>
-                <div class="c-panels__footer">
-                    <div class="c-panels__info">
-                        <a class="c-panels__avator">
-                            <div class="c-panels__avator-pic">
-                                <img src="{{ asset("images/alex.jpg")}}" alt="" class="u-avator--radius">
-                            </div>
-                            <span class="c-panels__author">YUTO</span>
-                        </a>
-                    </div>
-                    <div class="c-panels__date">
-                        2020年2月24日
-                    </div>
-                </div>
-            </article>
-
-            <article class="c-panels__item">
-                <a href="" class="">
-                    <div class="c-panels__head">
-                        <img src="{{ asset("images/slava.jpg")}}" alt="">
-                    </div>
-                </a>
-                <div class="c-panels__body">
-                    <h2 class="c-panels__title">夕陽</h2>
-                    <div class="c-panels__favorite-wrapper">
-                        <i class="fa fa-star c-panels__favorite-icon"></i>
-                    </div>
-                </div>
-                <div class="c-panels__footer">
-                    <div class="c-panels__info">
-                        <a class="c-panels__avator">
-                            <div class="c-panels__avator-pic">
-                                <img src="{{ asset("images/alex.jpg")}}" alt="" class="u-avator--radius">
-                            </div>
-                            <span class="c-panels__author">YUTO</span>
-                        </a>
-                    </div>
-                    <div class="c-panels__date">
-                        2020年2月24日
-                    </div>
-                </div>
-            </article>
-
+            @endforeach
 
 
         </div>

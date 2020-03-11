@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Picture;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ShowMypageController extends Controller
 {
-    public function showMypage()
+    public function showMypage(User $user)
     {
         $user = Auth::user();
-        $pictures = Auth::user()->pictures();
+
+        $pictures = Picture::where('user_id', $user->id)->get();
+
+
+
+
 
         if( !empty($user->pic)){
 
