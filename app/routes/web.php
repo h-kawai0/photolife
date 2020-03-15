@@ -13,14 +13,11 @@
 
 // TOP画面
 
-use App\Http\Controllers\showPassEditController;
 
-Route::get('/', function () {
-    return view('action.index');
-})->name('top');
+Route::get('/', 'IndexController')->name('top');
 
 // 写真詳細画面
-Route::get('/detail', function() {
+Route::get('/detail/{id}', function() {
     return view('action.detail');
 })->name('detail');
 
