@@ -83,6 +83,7 @@
 
             @endforeach
 
+                {{ $pictures->links('pagination::default') }}
 
         </div>
 

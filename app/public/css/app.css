@@ -3212,6 +3212,38 @@ img {
   text-align: center;
 }
 
+.c-pagination {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.c-pagination--wrap {
+  display: flex;
+  list-style: none;
+}
+
+.c-pagination__item {
+  margin-right: 5px;
+  padding: 10px;
+  font-size: 14px;
+  background: #226e69;
+  border-radius: 3px;
+}
+
+.c-pagination__item:last-child {
+  margin-right: 0;
+}
+
+.c-pagination__item--active {
+  background: #333;
+  color: #fafafa;
+}
+
+.c-pagination__link {
+  color: #fafafa;
+}
+
 .c-panels {
   padding-left: 15px;
   box-sizing: border-box;

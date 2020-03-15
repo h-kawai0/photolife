@@ -13,7 +13,7 @@ class ShowMypageController extends Controller
     {
         $user = Auth::user();
 
-        $pictures = Picture::where('user_id', $user->id)->get();
+        $pictures = Picture::where('user_id', $user->id)->paginate('10');
 
 
 

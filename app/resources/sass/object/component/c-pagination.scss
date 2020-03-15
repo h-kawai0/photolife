@@ -1,0 +1,38 @@
+// =======================
+// component
+// =======================
+
+// -----------------------
+// pagination
+// -----------------------
+
+.c-pagination{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $space_m;
+
+    &--wrap{
+        display: flex;
+        list-style: none;
+    }
+    &__item{
+        margin-right: $space_s;
+        padding: $space_m;
+        font-size: $font-size_m;
+        background: $btn-color-main;
+        border-radius: 3px;
+
+        &:last-child{
+            margin-right: 0;
+        }
+        &--active{
+            background: $font-color_default;
+            color: $font-color_sub;
+        }
+    }
+    &__link{
+        color: $font-color_sub;
+
+    }
+    
+}
