@@ -55,7 +55,7 @@
                     </div>
                 </a>
                 <div class="c-panels__body">
-                <h2 class="c-panels__title">{{ $picture->title }}</h2>
+                    <h2 class="c-panels__title">{{ $picture->title }}</h2>
                     <div class="c-panels__favorite-wrapper">
                         <i class="fa fa-star c-panels__favorite-icon"></i>
                     </div>
@@ -64,15 +64,21 @@
                     <div class="c-panels__info">
                         <a class="c-panels__avator">
                             <div class="c-panels__avator-pic">
-                            <img src="/storage/images/profile/{{$picture->user->pic }}" alt="" class="u-avator--radius">
+                                <img src="/storage/images/profile/{{$picture->user->pic }}" alt=""
+                                    class="u-avator--radius">
                             </div>
-                        <span class="c-panels__author">{{ $picture->user->name }}</span>
+                            <span class="c-panels__author">{{ $picture->user->name }}</span>
                         </a>
                     </div>
                     <div class="c-panels__date">
                         {{ $picture->created_at->format('Y年m月d日')}}
                     </div>
                 </div>
+
+                <a href="{{ route('editPhotoEdit', $picture->id )}}">
+                    <button class="c-panels__btn">編集</button>
+                </a>
+
             </article>
 
             @endforeach

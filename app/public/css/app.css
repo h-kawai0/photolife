@@ -3260,6 +3260,17 @@ img {
   margin-right: 5px;
 }
 
+.c-panels__btn {
+  width: 100%;
+  border: none;
+  background: #226e69;
+  color: #fafafa;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 .p-auth {
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }

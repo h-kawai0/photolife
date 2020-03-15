@@ -17,7 +17,7 @@ class ShowPhotoEditController extends Controller
     {
         $user = Auth::user();
 
-        return view('action.photoEdit', compact('user'));
+        return view('action.newPhotoEdit', compact('user'));
         
     }
 }

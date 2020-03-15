@@ -52,4 +52,14 @@
             margin-right: $space_s;
         }
     }
+    &__btn{
+        width: 100%;
+        border: none;
+        background: $btn-color_main;
+        color:$font-color_sub;
+        font-size: $font-size_m;
+        padding: $space_s $space_m; 
+        margin-top: $space_m;
+        cursor: pointer;
+    }
 }

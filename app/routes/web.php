@@ -27,23 +27,47 @@ Route::get('/detail', function() {
 
 Route::group(['middleware' => 'auth'], function () {
     
+    // ====================
     // マイページ関連
+    // ====================
+
+    // --------------------
+    // マイページ
+    // --------------------
     Route::get('/mypage', 'ShowMypageController@showMypage')->name('showMypage');
     
+    // --------------------
+    // プロフィール編集
+    // --------------------
     Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
 
     Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
 
-
+    // --------------------
+    // マイページパスワード変更
+    // --------------------
     Route::get('/mypage/password', 'showPassEditController')->name('passEdit');
 
     Route::put('/mypage', 'updatePassEditController')->name('passUpdate');
     
     
+    // --------------------
+    // 写真投稿
+    // --------------------
     Route::get('/photoedit', 'ShowPhotoEditController')->name('photoEdit');
 
     Route::post('/photoedit', 'CreatePhotoEditController')->name('createPhotoEdit');
+
+    // --------------------
+    // 写真編集
+    // --------------------
+    Route::get('/photoedit/{id}/edit', 'EditPhotoEditController')->name('editPhotoEdit');
+
+    Route::post('/photoedit/{id}', 'UpdatePhotoEditController')->name('updatePhotoEdit');
     
+    // --------------------
+    // 退会機能
+    // --------------------
     Route::post('/delete', 'UserDeleteController@userDelete')->name('userDelete');
     
 });
