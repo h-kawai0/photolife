@@ -14,11 +14,11 @@
 
             <article class="p-detail__item">
                 <div class="p-detail__head">
-                    <img src="{{ asset("images/slava.jpg") }}" alt="">
+                <img src="/storage/images/photo/{{ $picture->pic }}" alt="{{ $picture->title }}">
                 </div>
 
                 <div class="p-detail__body">
-                    <h2 class="p-detail__title">夕陽</h2>
+                <h2 class="p-detail__title">{{ $picture->title }}</h2>
                     <div class="c-detail__favorite--wrapper">
                         <i class="fa fa-star p-details__favorite-icon"></i>
                     </div>
@@ -27,17 +27,17 @@
                 <div class="p-detail__info">
                     <a class="p-detail__avator">
                         <div class="p-detail__avator-pic">
-                            <img src="{{ asset("images/alex.jpg")}}" alt="" class="u-avator--radius">
+                        <img src="/storage/images/profile/{{ $picture->user->pic }}" alt="{{ $picture->user->name }}" class="u-avator--radius">
                         </div>
-                        <span class="p-detail__author">YUTO</span>
+                    <span class="p-detail__author">{{ $picture->user->name }}</span>
                     </a>
 
                     <div class="p-detail__date">
-                        2020年2月24日
+                        {{ $picture->created_at->format('Y年n月j日') }}
                     </div>
                 </div>
                 <div class="p-detail__txt">
-                    <p>とてつもなく暑かったけど、夕陽がとてもきれいだった!!</p>
+                <p>{{ $picture->detail }}</p>
                 </div>
             </article>
 

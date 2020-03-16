@@ -17,9 +17,7 @@
 Route::get('/', 'IndexController')->name('top');
 
 // 写真詳細画面
-Route::get('/detail/{id}', function() {
-    return view('action.detail');
-})->name('detail');
+Route::get('/detail/{id}', 'ShowDetailController')->name('detail');
 
 
 Route::group(['middleware' => 'auth'], function () {
