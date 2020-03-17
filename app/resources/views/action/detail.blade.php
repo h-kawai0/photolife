@@ -43,21 +43,14 @@
 
             <div class="p-detail__tag-area">
 
+                @foreach ($tags as $tag)
+                    
                 <a href="" class="p-detail__tag">
-                    <p>#インスタ蠅</p>
+                <p>{{ $tag->name }}</p>
                 </a>
 
-                <a href="" class="p-detail__tag">
-                    <p>#夕陽</p>
-                </a>
+                @endforeach
 
-                <a href="" class="p-detail__tag">
-                    <p>#はつとうこうです</p>
-                </a>
-
-                <a href="" class="p-detail__tag">
-                    <p>#あきらめません、するまでは。</p>
-                </a>
 
             </div>
 
@@ -94,6 +87,7 @@
 
             <div class="p-detail__msg">
                 <form method="POST" action="" class="p-detail__form">
+                    @csrf
                     <textarea class="p-detail__input"></textarea>
                     <input type="submit" class="p-detail__btn" value="コメントする">
                 </form>

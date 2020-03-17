@@ -21,6 +21,8 @@ class ShowDetailController extends Controller
 
         $picture = Picture::find($id);
 
-        return view('action.detail', compact('picture'));
+        $tags = $picture->tags()->get();
+
+        return view('action.detail', compact('picture', 'tags'));
     }
 }
