@@ -15,8 +15,34 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pictures = Picture::paginate('10');
+         // $pictures = Picture::paginate('10');
 
-        return view('action.index', compact('pictures'));
+       // $pictures = Picture::pictureFilter(request('created_at'))->get();
+
+       $query = Picture::select('id', 'user_id', 'title', 'pic', 'created_at');
+       
+        switch($request->sort){
+            case 0: 
+                $query = $query;
+                $sortBy = 0;
+                break;
+            case 1: 
+                $query = $query->latest('created_at');
+                $sortBy = 1;
+                break;
+            case 2: 
+                $query = $query->oldest('created_at');
+                $sortBy = 2;
+                break;
+            default: 
+                $query = $query;
+                $sortBy = null;
+                break;
+        }
+
+        $pictures = $query->paginate('10');
+
+
+        return view('action.index', compact('pictures', 'sortBy'));
     }
 }

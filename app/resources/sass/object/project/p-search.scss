@@ -1,0 +1,80 @@
+// =========================
+// project
+// =========================
+
+// -------------------------
+// search
+// -------------------------
+
+.p-search{
+    padding-left: $space_l;
+    padding-right: $space_l;
+    box-sizing: border-box;
+    margin-bottom: $space_l;
+    &__title{
+    
+        font-size: $font-size-m;
+    }
+    &__selectBox{
+        width: 100%;
+        text-align: center;
+        margin-bottom: $space_s;
+    }
+    &__select{
+        width: 100%;
+        padding: $space_m $space_4l $space_m $space_m;
+        cursor: pointer;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        appearance: none;
+        &::-ms-expand{
+            display: none;
+        }
+    }
+    &__sl{
+        position: relative;
+        border: 1px solid #bbb;
+        border-radius: 2px;
+        background: #fff;
+        &::before{
+            position: absolute;
+            top: 0.8em;
+            right: 0.9em;
+            width: 0;
+            height: 0;
+            padding: 0;
+            content: '';
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #666;
+            pointer-events: none;
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            right: 2.5em;
+            bottom: 0;
+            width: 1px;
+            content: '';
+            border-left: 1px solid #bbb;
+        }
+    }
+    &__btn{
+        width: 100%;
+        border: none;
+        font-size: $font-size-m;
+        padding: $space_m;
+        background: $btn-color_main;
+        color: $font-color_sub;
+        border-radius: 3px;
+        cursor:pointer;
+        &:hover{
+            background: $btn-color_main-hover;
+        }
+    }
+}
