@@ -20,10 +20,10 @@ class IndexController extends Controller
        // $pictures = Picture::pictureFilter(request('created_at'))->get();
 
        $query = Picture::select('id', 'user_id', 'title', 'pic', 'created_at');
+
        
         switch($request->sort){
             case 0: 
-                $query = $query;
                 $sortBy = 0;
                 break;
             case 1: 
@@ -35,12 +35,12 @@ class IndexController extends Controller
                 $sortBy = 2;
                 break;
             default: 
-                $query = $query;
                 $sortBy = null;
                 break;
         }
 
         $pictures = $query->paginate('10');
+
 
 
         return view('action.index', compact('pictures', 'sortBy'));

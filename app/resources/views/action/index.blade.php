@@ -69,7 +69,13 @@
             </article>
             @endforeach
 
+            @if ($sortBy === 0)
+                {{ $pictures->links('pagination::default') }}
+            
+            @else
+
             {{ $pictures->appends(['sort' => $sortBy])->links('pagination::default') }}
+            @endif
 
         </div>
 
