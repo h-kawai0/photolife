@@ -59,6 +59,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/photoedit/{id}/edit', 'EditPhotoEditController')->name('editPhotoEdit');
 
     Route::post('/photoedit/{id}', 'UpdatePhotoEditController')->name('updatePhotoEdit');
+
+    // --------------------
+    // 写真削除
+    // --------------------
+    Route::post('/photoedit/{id}/delete', 'PhotoDeleteController')->name('deletePhoto');
     
     // --------------------
     // 退会機能

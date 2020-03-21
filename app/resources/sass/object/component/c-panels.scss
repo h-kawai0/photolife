@@ -42,8 +42,7 @@
     }
     &__footer{
         display: flex;
-        justify-content: space-between;
-        align-items: baseline;
+        flex-wrap: wrap;
     }
     &__avator{
         &-pic{
@@ -53,7 +52,6 @@
         }
     }
     &__btn{
-        width: 100%;
         border: none;
         background: $btn-color_main;
         color:$font-color_sub;
@@ -61,5 +59,9 @@
         padding: $space_s $space_m; 
         margin-top: $space_m;
         cursor: pointer;
+        border-radius: 5px;
+        &--alert{
+            background: $btn-color_sub;
+        }
     }
 }

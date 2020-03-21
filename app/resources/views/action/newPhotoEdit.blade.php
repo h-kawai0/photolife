@@ -6,8 +6,6 @@
 
 @section('content')
 
-<div id="app">
-
     <article class="p-photoEdit">
 
     <form method="POST" action="{{ route('createPhotoEdit') }}" class="p-photoEdit" enctype="multipart/form-data">
@@ -60,7 +58,6 @@
             <input type="submit" class="p-photoEdit__btn" value="保存">
         </form>
     </article>
-</div>
     
 @endsection
 

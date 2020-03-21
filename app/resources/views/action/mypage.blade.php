@@ -9,8 +9,6 @@
 
 <main class="l-main">
 
-    <div id="app">
-
         <div class="p-mypage">
 
             <div class="p-mypage__info">
@@ -76,8 +74,13 @@
                 </div>
 
                 <a href="{{ route('editPhotoEdit', $picture->id )}}">
-                    <button class="c-panels__btn">編集</button>
+                    <button class="c-panels__btn ">編集</button>
                 </a>
+
+            <form method="POST" action="{{ route('deletePhoto', $picture->id )}}" class="u-inlineBlock">
+                    @csrf
+                    <button class="c-panels__btn c-panels__btn--alert" onclick='return confirm("一度削除するとこの操作は取り消せません。本当に削除しますか?"); '>削除</button>
+                </form>
 
             </article>
 
@@ -87,7 +90,6 @@
 
         </div>
 
-    </div>
 </main>
 
 

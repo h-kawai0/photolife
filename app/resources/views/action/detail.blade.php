@@ -8,8 +8,6 @@
 
 <main class="l-main">
 
-    <div id="app">
-
         <div class="p-detail">
 
             <article class="p-detail__item">
@@ -94,7 +92,7 @@
             </div>
         </div>
 
-    </div>
+
 </main>
 
 

@@ -8,9 +8,6 @@
 
 <main class="l-main">
 
-
-    <div id="app">
-
         <div class="p-search">
         <form method="GET" action="{{ route('top')}}">
 
@@ -79,7 +76,6 @@
 
         </div>
 
-    </div>
 </main>
 
 @endsection

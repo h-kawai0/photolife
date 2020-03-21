@@ -18,4 +18,6 @@
     background: $header_color_main;
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     margin-bottom: $space_3l;
+    position: fixed;
+    z-index: 3;
 }

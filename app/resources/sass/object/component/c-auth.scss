@@ -9,8 +9,11 @@
 .c-auth{
 
     width: 100%;
-    margin: 100px auto;
+    margin-left: auto;
+    margin-right: auto;
     color: $font-color_sub;
+    padding-top: 100px;
+    padding-bottom: 100px;
     &__form{
         width: 50%;
         margin: 0 auto;

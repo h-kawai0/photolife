@@ -6,8 +6,6 @@
 
 @section('content')
 
-<div id="app">
-
     <article class="p-profEdit">
 
     <form method="POST" enctype="multipart/form-data" class="p-profEdit__form" action="{{ route('profUpdate') }}">
@@ -60,10 +58,6 @@
         </form>
 
     </article>
-</div>
-
-
-
 
 @endsection
 
