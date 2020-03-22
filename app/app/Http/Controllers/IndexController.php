@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -21,6 +22,7 @@ class IndexController extends Controller
 
        $query = Picture::select('id', 'user_id', 'title', 'pic', 'created_at');
 
+       $user = Auth::user();
        
         switch($request->sort){
             case 0: 
@@ -43,6 +45,6 @@ class IndexController extends Controller
 
 
 
-        return view('action.index', compact('pictures', 'sortBy'));
+        return view('action.index', compact('pictures', 'sortBy', 'user' ));
     }
 }

@@ -3129,6 +3129,7 @@ img {
 .l-main {
   margin: 0 auto;
   width: 100%;
+  padding-top: 100px;
 }
 
 .c-auth {
@@ -3476,7 +3477,7 @@ img {
 }
 
 .p-header__hamburger.is-active .p-header__sp-menu:nth-of-type(1) {
-  transform: translateY(12px) rotate(-45deg);
+  transform: translateY(15px) rotate(-45deg);
 }
 
 .p-header__hamburger.is-active .p-header__sp-menu:nth-of-type(2) {
