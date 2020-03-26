@@ -12,12 +12,15 @@
 */
 
 // TOP画面
-
-
 Route::get('/', 'IndexController')->name('top');
 
 // 写真詳細画面
 Route::get('/detail/{id}', 'ShowDetailController')->name('detail');
+
+// =================
+// ajax
+// =================
+Route::get('/index', 'ajaxPanelController');
 
 
 Route::group(['middleware' => 'auth'], function () {

@@ -3226,6 +3226,7 @@ img {
 
 .c-pagination--wrap {
   display: flex;
+  justify-content: center;
   list-style: none;
 }
 
@@ -3289,6 +3290,7 @@ img {
 .c-panels__footer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .c-panels__avator-pic {

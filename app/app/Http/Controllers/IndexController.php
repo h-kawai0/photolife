@@ -18,11 +18,14 @@ class IndexController extends Controller
     {
          // $pictures = Picture::paginate('10');
 
-       // $pictures = Picture::pictureFilter(request('created_at'))->get();
 
-       $query = Picture::select('id', 'user_id', 'title', 'pic', 'created_at');
+    //    $query = Picture::select('id', 'user_id', 'title', 'pic', 'created_at');
+
+    $query = Picture::with('user:id,name,pic')->select('id', 'user_id', 'title', 'pic', 'created_at');
 
        $user = Auth::user();
+       
+
        
         switch($request->sort){
             case 0: 
@@ -41,7 +44,8 @@ class IndexController extends Controller
                 break;
         }
 
-        $pictures = $query->paginate('10');
+        $pictures = $query->get();
+        // ->paginate('10');
 
 
 

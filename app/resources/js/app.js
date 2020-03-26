@@ -9,6 +9,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+Vue.use(require('vue-moment'));
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,6 +25,10 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('header-item', require('./components/HeaderItem.vue').default);
+
+Vue.component('index-panel', require('./components/IndexPanel.vue').default);
+
+Vue.component('pagi-nation', require('./components/Pagination.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
