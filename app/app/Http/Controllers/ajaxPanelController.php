@@ -15,7 +15,9 @@ class ajaxPanelController extends Controller
      */
     public function __invoke(Request $request)
     {
-        // return Picture::paginate(10);
         return Picture::with('user:id,name,pic')->select('id', 'user_id', 'title', 'pic', 'created_at')->paginate(10);
+
+        // $query = Picture::with('user:id, name, pic')->select('id', 'user_id', 'title', 'pic', 'created_at');
+
     }
 }

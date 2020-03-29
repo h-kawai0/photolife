@@ -24,11 +24,19 @@ Vue.use(require('vue-moment'));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+// ------------------------------
+// header
+// ------------------------------
 Vue.component('header-item', require('./components/HeaderItem.vue').default);
 
-Vue.component('index-panel', require('./components/IndexPanel.vue').default);
+// ------------------------------
+// index
+// ------------------------------
+Vue.component('index', require('./components/index/index.vue').default);
 
-Vue.component('pagi-nation', require('./components/Pagination.vue').default);
+// Vue.component('index-panel', require('./components/IndexPanel.vue').default);
+
+// Vue.component('pagi-nation', require('./components/Pagination.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
