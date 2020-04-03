@@ -24,9 +24,7 @@ class IndexController extends Controller
     $query = Picture::with('user:id,name,pic')->select('id', 'user_id', 'title', 'pic', 'created_at');
 
        $user = Auth::user();
-       
-
-       
+          
         switch($request->sort){
             case 0: 
                 $sortBy = 0;

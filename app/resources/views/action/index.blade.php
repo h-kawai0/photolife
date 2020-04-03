@@ -9,7 +9,7 @@
 <main class="l-main">
 
 
-    <index></index>
+    <index-app></index-app>
 
     
     {{-- <index-panel :pictures="{{ $pictures }}" 

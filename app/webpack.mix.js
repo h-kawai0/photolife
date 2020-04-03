@@ -17,11 +17,13 @@ const mix = require('laravel-mix');
 
 mix.webpackConfig({
    module:{
-      rules:[{
+      rules:[
+         {
          test: /\.scss/,
          enforce: "pre",
          loader:'import-glob-loader'
-      }]
+      },
+         ]
    }
 })
 .js('resources/js/app.js', 'public/js')
