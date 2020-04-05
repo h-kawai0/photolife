@@ -1,7 +1,7 @@
 <template>
   <div class="c-panels">
     <article class="c-panels__item" v-for="picture in pictures" :key="picture.id">
-      <a href class>
+      <a :href="'/detail/' + picture.id" class>
         <div class="c-panels__head">
           <img :src="'storage/images/photo/'+ picture.pic" :alt="picture.title" />
         </div>

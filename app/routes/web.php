@@ -14,8 +14,12 @@
 // TOP画面
 Route::get('/', 'IndexController')->name('top');
 
+// -----------------------
 // 写真詳細画面
+// -----------------------
 Route::get('/detail/{id}', 'ShowDetailController')->name('detail');
+
+Route::post('/detail/{id}/favorite', 'AjaxChatSendController');
 
 // =================
 // ajax

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShowDetailController extends Controller
 {
@@ -21,8 +22,10 @@ class ShowDetailController extends Controller
 
         $picture = Picture::find($id);
 
+        $user = Auth::user();
+
         $tags = $picture->tags()->get();
 
-        return view('action.detail', compact('picture', 'tags'));
+        return view('action.detail', compact('picture', 'tags', 'user'));
     }
 }
