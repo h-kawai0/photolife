@@ -19,7 +19,15 @@ Route::get('/', 'IndexController')->name('top');
 // -----------------------
 Route::get('/detail/{id}', 'ShowDetailController')->name('detail');
 
+// -----------------------
+// コメント非同期送信
+// -----------------------
 Route::post('/detail/{id}/favorite', 'AjaxChatSendController');
+
+// -----------------------
+// コメント非同期受信
+// -----------------------
+Route::get('detail/{id}/favorite/comments', 'AjaxChatRequestController');
 
 // =================
 // ajax

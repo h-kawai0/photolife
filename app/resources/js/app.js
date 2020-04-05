@@ -39,7 +39,7 @@ Vue.component("index-app", require("./components/index/index.vue").default);
 // ------------------------------
 // favorite
 // ------------------------------
-Vue.component("ajax-msg", require("./components/ajaxMsg.vue").default);
+Vue.component("ajax-sendmsg", require("./components/ajaxSendMsg.vue").default);
 
 // Vue.component('index-panel', require('./components/IndexPanel.vue').default);
 
