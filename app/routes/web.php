@@ -22,12 +22,12 @@ Route::get('/detail/{id}', 'ShowDetailController')->name('detail');
 // -----------------------
 // コメント非同期送信
 // -----------------------
-Route::post('/detail/{id}/favorite', 'AjaxChatSendController');
+Route::post('/detail/{id}/send', 'AjaxChatSendController');
 
 // -----------------------
 // コメント非同期受信
 // -----------------------
-Route::get('detail/{id}/favorite/comments', 'AjaxChatRequestController');
+Route::get('detail/{id}/comments', 'AjaxChatRequestController');
 
 // =================
 // ajax

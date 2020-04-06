@@ -3393,10 +3393,14 @@ img {
 }
 
 .p-detail__chat-l {
-  margin: 30px auto;
+  margin: 10px auto;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.p-detail__chat-user {
+  font-size: 12px;
 }
 
 .p-detail__chat-txt {

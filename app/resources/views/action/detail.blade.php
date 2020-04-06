@@ -53,9 +53,7 @@
 
         </div>
 
-        <ajax-sendmsg :picture-id="{{ $picture->id }}" @isset($user->id)
-            :user-id="{{ $user->id }}"
-            @endisset></ajax-sendmsg>
+        <ajax-msg :picture-id="{{ $picture->id }}" @isset($user->id) :user-id="{{ $user->id }}" @endisset></ajax-msg>
 
     </div>
 

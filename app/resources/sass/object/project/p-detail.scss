@@ -73,10 +73,13 @@
     }
     &__chat{
         &-l{
-            margin: $space_3l auto;
+            margin: $space_m auto;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
+        }
+        &-user{
+            font-size: $font-size_s;
         }
         &-txt{
             background: $font-color_sub;
