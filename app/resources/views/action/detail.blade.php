@@ -17,9 +17,11 @@
 
             <div class="p-detail__body">
                 <h2 class="p-detail__title">{{ $picture->title }}</h2>
-                <div class="c-detail__favorite--wrapper">
-                    <i class="fa fa-star p-details__favorite-icon"></i>
-                </div>
+
+            <ajax-like-detail  @isset($isLike)
+            :is-like="{{ $isLike }}" @endisset @isset($user)    
+            :user="{{ $user->id }}" @endisset :picture="{{ $picture }}"></ajax-like-detail>
+
             </div>
 
             <div class="p-detail__info">
@@ -53,7 +55,7 @@
 
         </div>
 
-        <ajax-msg :picture-id="{{ $picture->id }}" @isset($user->id) :user-id="{{ $user->id }}" @endisset></ajax-msg>
+        <ajax-msg :picture-id="{{ $picture->id }}" @isset($user) :user-id="{{ $user->id }}" @endisset></ajax-msg>
 
     </div>
 

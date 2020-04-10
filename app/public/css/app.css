@@ -3336,6 +3336,15 @@ img {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+.p-detail__favorite-icon {
+  color: #ccc;
+  font-size: 24px;
+}
+
+.p-detail__favorite-icon--active {
+  color: #ffa500;
+}
+
 .p-detail__body {
   display: flex;
   justify-content: space-between;
@@ -3608,6 +3617,7 @@ img {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 40px;
   box-sizing: border-box;
   margin-bottom: 40px;
 }

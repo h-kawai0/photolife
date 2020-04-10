@@ -39,9 +39,9 @@
                 <button class="p-mypage__btn u-btn--alert"
                     onclick='return confirm("一度実行するとこの操作は取り消せません。本当にアカウントを削除しますか?");'>退会する</button>
             </form>
-        </div>
 
-
+        <h1>投稿済みの写真</h1>
+        
         <div class="c-panels">
 
             @foreach ($pictures as $picture)
@@ -89,6 +89,9 @@
                 {{ $pictures->links('pagination::default') }}
 
         </div>
+
+    </div>
+
 
 </main>
 

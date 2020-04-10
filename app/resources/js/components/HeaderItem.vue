@@ -29,7 +29,7 @@
         </li>
 
         <li class="p-header__item" v-if="user">
-          <a class="p-header__link" href>MYPAGE</a>
+          <a href="/mypage" class="p-header__link">MYPAGE</a>
         </li>
         <li class="p-header__item" v-if="user">
           <a

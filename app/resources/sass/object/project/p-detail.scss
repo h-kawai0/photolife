@@ -20,6 +20,15 @@
         margin-bottom: $space_m;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     }
+    &__favorite{
+        &-icon{
+            color: $favorite_not_like;
+            font-size: $font-size_2l;
+            &--active{
+                color: $favorite_is_like;
+            }
+        }
+    }
     &__body{
         display: flex;
         justify-content: space-between;

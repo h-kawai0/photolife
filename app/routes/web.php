@@ -34,6 +34,12 @@ Route::get('detail/{id}/comments', 'AjaxChatRequestController');
 // =================
 Route::get('/index', 'ajaxPanelController');
 
+// ------------------------
+// お気に入り登録
+// ------------------------
+
+Route::post('detail/{id}/favorite', 'AjaxFavoritePostController');
+
 
 Route::group(['middleware' => 'auth'], function () {
     

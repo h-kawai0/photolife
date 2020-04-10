@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Favorite;
 use App\Picture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class ShowDetailController extends Controller
 {
@@ -19,13 +21,24 @@ class ShowDetailController extends Controller
         if(!ctype_digit($id)){
             return redirect('/');
         }
-
+        
         $picture = Picture::find($id);
 
         $user = Auth::user();
 
         $tags = $picture->tags()->get();
 
-        return view('action.detail', compact('picture', 'tags', 'user'));
+        if(!empty($user)){
+
+            $isLike = Favorite::where('picture_id', '=', $id)->where('user_id', '=', $user->id )->first();
+        }else{
+            $isLike =  null;
+            $user = null;
+
+        }
+
+
+
+        return view('action.detail', compact('picture', 'tags', 'user', 'isLike' ));
     }
 }

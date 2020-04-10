@@ -45,6 +45,11 @@ Vue.component("ajax-send-msg", require("./components/msg/ajaxSendMsg.vue").defau
 
 Vue.component("ajax-request-msg", require("./components/msg/ajaxRequestMsg.vue").default);
 
+// -------------------------------
+// favorite
+// -------------------------------
+Vue.component('ajax-like-detail', require("./components/detail/ajaxLikeDetail.vue").default);
+
 
 // Vue.component('index-panel', require('./components/IndexPanel.vue').default);
 
