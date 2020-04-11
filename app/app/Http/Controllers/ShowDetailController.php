@@ -19,7 +19,7 @@ class ShowDetailController extends Controller
     public function __invoke(Request $request, $id)
     {
         if(!ctype_digit($id)){
-            return redirect('/');
+            return redirect('/')->with('flash_message', '不正な操作が行われました。');
         }
         
         $picture = Picture::find($id);

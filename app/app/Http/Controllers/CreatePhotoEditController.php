@@ -47,6 +47,6 @@ class CreatePhotoEditController extends Controller
 
         
 
-        return redirect('/mypage');
+        return redirect('/mypage')->with('flash_message', '写真を投稿しました!');
     }
 }

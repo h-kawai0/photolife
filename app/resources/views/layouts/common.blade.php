@@ -12,8 +12,16 @@
 <body>
 
     <div id="app">
+        
+        @if (session('flash_message'))
+
+    <flash-msg flash-msg="{{ session('flash_message') }}"></flash-msg>
+
+        @endif
+
 
         @yield('header')
+
 
         @yield('content')
         

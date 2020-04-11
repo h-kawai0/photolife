@@ -6,18 +6,13 @@
 
       <div class="p-search__selectBox p-search__sl">
 
-        <select class="p-search__select" v-model="selected" @change="onChange">
+        <select class="p-search__select" v-model="selected" @change="onSort">
           <option selected="selected" value="0">選択してください</option>
           <option value="1">投稿日が新しい順</option>
           <option value="2">投稿日が古い順</option>
         </select>
 
       </div>
-    </div>
-
-    <div class="p-narrow">
-      <h1 class="p-narrow__title">絞り込み</h1>
-      
     </div>
 
     <h1 class="p-index__title">写真一覧</h1>
@@ -37,12 +32,12 @@ export default {
     return {
       page: 1,
       pictures: [],
-      selected: "0"
+      selected: "0",
     };
   },
   methods: {
     getItems() {
-      const url = "/index?page=" + this.page + "&sort=" + this.selected;
+      // const url = "/index?page=" + this.page + "&sort=" + this.selected + "&check=" + this.checked;
 
       // axios.interceptors.request.use( request => {
       //   console.log('Starting Request: ', request);
@@ -56,7 +51,12 @@ export default {
       // });
 
       axios
-        .get(url, this.selected)
+        .get('/index', {
+          params: {
+            page: this.page,
+            sort: this.selected,
+          }
+        })
         .then(response => {
           this.pictures = response.data;
         })
@@ -68,7 +68,7 @@ export default {
       this.page = page;
       this.getItems();
     },
-    onChange() {
+    onSort() {
       console.log(this.selected);
 
       switch (this.selected) {
@@ -90,7 +90,7 @@ export default {
           console.log("一致なし");
         }
       }
-    }
+    },
   },
   mounted() {
     this.getItems();

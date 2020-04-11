@@ -47,16 +47,13 @@
             @foreach ($pictures as $picture)
 
             <article class="c-panels__item">
-                <a href="" class="">
+            <a href="{{ route('detail', $picture->id)}}" class="">
                     <div class="c-panels__head">
                         <img src="/storage/images/photo/{{$picture->pic }}" alt="{{ $picture->title }}">
                     </div>
                 </a>
                 <div class="c-panels__body">
                     <h2 class="c-panels__title">{{ $picture->title }}</h2>
-                    <div class="c-panels__favorite-wrapper">
-                        <i class="fa fa-star c-panels__favorite-icon"></i>
-                    </div>
                 </div>
                 <div class="c-panels__footer">
                     <div class="c-panels__info">
@@ -86,9 +83,10 @@
 
             @endforeach
 
-                {{ $pictures->links('pagination::default') }}
-
+            
         </div>
+        
+        {{ $pictures->links('pagination::default') }}
 
     </div>
 

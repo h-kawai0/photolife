@@ -26,6 +26,11 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+// -----------------------------
+// flashMsg
+// -----------------------------
+Vue.component("flash-msg", require("./components/flashMsg.vue").default);
+
 // ------------------------------
 // header
 // ------------------------------

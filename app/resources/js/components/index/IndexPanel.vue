@@ -8,9 +8,6 @@
       </a>
       <div class="c-panels__body">
         <h2 class="c-panels__title">{{ picture.title}}</h2>
-        <div class="c-panels__favorite--wrapper">
-          <i class="fa fa-star c-panels__favorite-icon"></i>
-        </div>
       </div>
       <div class="c-panels__footer">
         <div class="c-panels__info">

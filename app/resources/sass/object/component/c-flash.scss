@@ -1,0 +1,22 @@
+// =====================
+// component
+// =====================
+
+// ---------------------
+// c-flash
+// ---------------------
+
+.c-flash{
+    background: #3498db;
+    color: $font-color_sub;
+    padding-left: $space_l;
+    padding-right: $space_l;
+    box-sizing: border-box;
+    text-align: center;
+    &-enter-active, &-leave-active{
+        transition: opacity 1.0s;
+    }
+    &-enter, &-leave-to{
+    opacity: 0;
+    }
+}

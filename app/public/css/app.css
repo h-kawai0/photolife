@@ -3218,6 +3218,25 @@ img {
   text-align: center;
 }
 
+.c-flash {
+  background: #3498db;
+  color: #fafafa;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.c-flash-enter-active,
+.c-flash-leave-active {
+  transition: opacity 1s;
+}
+
+.c-flash-enter,
+.c-flash-leave-to {
+  opacity: 0;
+}
+
 .c-pagination {
   margin-left: auto;
   margin-right: auto;
