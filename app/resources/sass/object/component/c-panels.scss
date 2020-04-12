@@ -16,6 +16,9 @@
         margin-bottom: $space_3l;
         width: calc(50% - #{$space_l});
         margin-right: $space_l;
+        @include mq(){
+            width: calc(33% - #{$space_l});
+        }
     }
     &__head{
         padding: $space_s;

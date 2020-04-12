@@ -9,6 +9,10 @@
 .p-detail{
     padding: $space_m;
     box-sizing: border-box;
+    @include mq() {
+        width: 60%;
+        margin: 0 auto;
+    }
     &__item{
         box-sizing: border-box;
         margin-bottom: $space_3l;

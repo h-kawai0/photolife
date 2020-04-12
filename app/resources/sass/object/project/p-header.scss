@@ -70,10 +70,10 @@
         height: 100vh;
         background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
         padding-top: 50px;
-        transition: 1.0s;
+        transition: .5s;
         z-index: 2;
         &.is-active{
-            transition: 1.0s;
+            transition: .5s;
             transform: translateX(-100%);
             z-index: 2;
         }

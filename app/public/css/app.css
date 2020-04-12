@@ -3057,6 +3057,13 @@ body {
   background: #efeae5;
 }
 
+@media screen and (min-width: 960px) {
+  html,
+  body {
+    max-width: 100%;
+  }
+}
+
 body {
   display: flex;
   flex-flow: column;
@@ -3130,6 +3137,12 @@ img {
   margin: 0 auto;
   width: 100%;
   padding-top: 100px;
+}
+
+@media screen and (min-width: 960px) {
+  .l-main {
+    width: 1200px;
+  }
 }
 
 .c-auth {
@@ -3284,6 +3297,12 @@ img {
   margin-right: 15px;
 }
 
+@media screen and (min-width: 960px) {
+  .c-panels__item {
+    width: calc(33% - 15px);
+  }
+}
+
 .c-panels__head {
   padding: 5px;
   background: #fafafa;
@@ -3340,6 +3359,13 @@ img {
 .p-detail {
   padding: 10px;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 960px) {
+  .p-detail {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 .p-detail__item {
@@ -3555,12 +3581,12 @@ img {
   height: 100vh;
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   padding-top: 50px;
-  transition: 1s;
+  transition: 0.5s;
   z-index: 2;
 }
 
 .p-header__nav.is-active {
-  transition: 1s;
+  transition: 0.5s;
   transform: translateX(-100%);
   z-index: 2;
 }
@@ -3611,6 +3637,12 @@ img {
   font-weight: bold;
 }
 
+@media screen and (min-width: 960px) {
+  .p-mypage__link {
+    margin-right: 15px;
+  }
+}
+
 .p-mypage__btn {
   border: none;
   width: 100%;
@@ -3621,6 +3653,12 @@ img {
   font-size: 14px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 960px) {
+  .p-mypage__btn-list {
+    display: flex;
+  }
 }
 
 .p-mypage__comment {

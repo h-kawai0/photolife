@@ -64,15 +64,15 @@ $space_4l: 40px;
 // ----------------------------
 
 $breakpoints: (
-    'md' : 'screen and (min-width: 481px)',
-    'lg' : 'screen and (min-width: 960px)',
+    'tab' : 'screen and (min-width: 560px)',
+    'pc' : 'screen and (min-width: 960px)',
 ) !default;
 
 // ============================
 // mixin
 // ============================
 
-@mixin mq($breakpoint: md) {
+@mixin mq($breakpoint: pc) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
@@ -90,6 +90,9 @@ html, body{
     text-size-adjust: 100%;
     letter-spacing: 0.1em;
     max-width: 480px;
+    @include mq() {
+        max-width: 100%;
+    }
     background: $back-ground-color_main;
 }
 

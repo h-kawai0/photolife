@@ -24,6 +24,11 @@
         font-size: $font-size_l;
         font-weight: bold;
     }
+    &__link{
+        @include mq(){
+            margin-right: $space_l;
+        }
+    }
     &__btn{
         border: none;
         width: 100%;
@@ -34,6 +39,12 @@
         font-size: $font-size_m;
         border-radius: 10px;
         cursor: pointer;
+        &-list{
+            @include mq(){
+                display: flex;
+
+            }
+        }
     }
     &__comment{
         word-wrap: break-word;
