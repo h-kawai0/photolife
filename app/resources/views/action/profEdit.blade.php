@@ -6,21 +6,27 @@
 
 @section('content')
 
+<main class="l-main">
+
+
     <article class="p-profEdit">
 
-    <form method="POST" enctype="multipart/form-data" class="p-profEdit__form" action="{{ route('profUpdate') }}">
+    <form method="POST" enctype="multipart/form-data" class="p-profEdit__form" action="{{route('profUpdate')}}">
             @csrf
-            @method('put')
 
-            <div class="p-profEdit__avator">
+            {{-- <div class="p-profEdit__avator">
                 <input type="file" name="pic">
+                <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">
+            </div> --}}
+
+        <edit-avatar :user="{{ $user }}"></edit-avatar>
+
+
                 @error('pic')
                 <span class="p-profEdit--alert">
                     {{ $message }}
                 </span>
                 @enderror
-                <img class="u-avator--radius" src="{{ asset('images/alex.jpg')}}" alt="">
-            </div>
 
             <label>名前
                 <input type="text" class="p-profEdit__input @error('name') p-profEdit--err @enderror"
@@ -58,6 +64,9 @@
         </form>
 
     </article>
+
+</main>
+
 
 @endsection
 

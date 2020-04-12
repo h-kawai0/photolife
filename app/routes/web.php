@@ -57,7 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
     // --------------------
     Route::get('/mypage/profile', 'ProfEditMypageController' )->name('profEdit');
 
-    Route::put('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
+    Route::post('/mypage', 'ProfUpdateMypageController')->name('profUpdate');
 
     // --------------------
     // マイページパスワード変更

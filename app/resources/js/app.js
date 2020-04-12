@@ -47,6 +47,11 @@ Vue.component("index-app", require("./components/index/index.vue").default);
 Vue.component("edit-pic", require("./components/edit/editPic.vue").default);
 
 // ------------------------------
+// mypage
+// ------------------------------
+Vue.component("edit-avatar", require("./components/edit/editAvatar.vue").default);
+
+// ------------------------------
 // comment
 // ------------------------------
 Vue.component('ajax-msg', require("./components/msg/ajaxMsg.vue").default);

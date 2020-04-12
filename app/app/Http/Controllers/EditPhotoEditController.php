@@ -16,7 +16,7 @@ class EditPhotoEditController extends Controller
     public function __invoke($id)
     {
         if(!ctype_digit($id)){
-            return redirect('/photoEdit');
+            return redirect('/photoEdit')->with('flash_message', '不正な操作が行われました。');
         }
 
         $picture = Picture::find($id);

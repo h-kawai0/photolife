@@ -21,7 +21,7 @@ class UpdatePhotoEditController extends Controller
     {
         
         if(!ctype_digit($id)){
-            return redirect('/photoedit');
+            return redirect('/photoedit')->with('flash_message', '不正な操作が行われました。');
             
         }
 
