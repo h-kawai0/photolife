@@ -42,6 +42,11 @@ Vue.component("header-item", require("./components/HeaderItem.vue").default);
 Vue.component("index-app", require("./components/index/index.vue").default);
 
 // ------------------------------
+// edit
+// ------------------------------
+Vue.component("edit-pic", require("./components/edit/editPic.vue").default);
+
+// ------------------------------
 // comment
 // ------------------------------
 Vue.component('ajax-msg', require("./components/msg/ajaxMsg.vue").default);

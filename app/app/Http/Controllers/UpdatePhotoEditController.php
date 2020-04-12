@@ -6,6 +6,8 @@ use App\Http\Requests\EditPhotoEditRequest;
 use App\Picture;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class UpdatePhotoEditController extends Controller
 {
@@ -22,15 +24,20 @@ class UpdatePhotoEditController extends Controller
             return redirect('/photoedit');
             
         }
-        
+
+        Log::debug($request);
+
         $picture = Picture::find($id);
+        log::debug($picture->pic);
 
         $requestPic = (!empty($request->pic)) ? $request->pic->store('images/photo') : '';
 
-        $requestPic = (empty($pic) && !empty($picture->pic) ) ? $picture->pic : $requestPic;
-
+        $requestPic = (empty($request->pic) && !empty($picture->pic) ) ? $picture->pic : $requestPic;
         $picture->title = $request->title;
         $picture->detail = $request->detail;
+        
+        Storage::delete('images/photo/'. $picture->pic);
+
         $picture->pic = basename($requestPic);
         $picture->save();
 
