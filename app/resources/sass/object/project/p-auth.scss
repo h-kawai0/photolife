@@ -8,4 +8,8 @@
 
 .p-auth{
     background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+    @include mq() {
+        width: 100%;
+        padding-top: 0;
+    }
 }

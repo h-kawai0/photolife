@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,24 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    // protected $redirectTo = '/';
+
+    protected function redirectTo() {
+        session()->flash('flash_message', 'ログインしました!');
+        return '/';
+    }
+
+    protected function logout(Request $request)
+    {
+
+        Auth::logout();
+
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ? : redirect('/')->with('flash_message', 'ログアウトしました!');
+    }
 
     /**
      * Create a new controller instance.

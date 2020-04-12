@@ -3356,6 +3356,13 @@ img {
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }
 
+@media screen and (min-width: 960px) {
+  .p-auth {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
 .p-detail {
   padding: 10px;
   box-sizing: border-box;
@@ -3668,6 +3675,12 @@ img {
 .p-passEdit {
   margin-top: -30px;
   background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);
+}
+
+@media screen and (min-width: 960px) {
+  .p-passEdit {
+    width: 100%;
+  }
 }
 
 .p-photoEdit {
