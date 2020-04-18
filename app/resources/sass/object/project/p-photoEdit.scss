@@ -13,6 +13,11 @@
     padding-top: 40px;
     box-sizing: border-box;
     margin-bottom: $space_4l;
+    @include mq(){
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     &__pic{
         margin-bottom: $space_l;
     }
@@ -47,5 +52,13 @@
         color: $font-color_sub;
         margin-bottom: $space_l;
         cursor: pointer;
+    }
+    &--err{
+        display: block;
+    }
+    &--alert{
+        color: $err_color_2;
+        display: block;
+        text-align: center;
     }
 }

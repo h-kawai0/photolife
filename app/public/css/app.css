@@ -3228,7 +3228,6 @@ img {
 .c-auth--alert {
   color: red;
   display: block;
-  text-align: center;
 }
 
 .c-flash {
@@ -3692,6 +3691,14 @@ img {
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 960px) {
+  .p-photoEdit {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .p-photoEdit__pic {
   margin-bottom: 15px;
 }
@@ -3729,6 +3736,16 @@ img {
   color: #fafafa;
   margin-bottom: 15px;
   cursor: pointer;
+}
+
+.p-photoEdit--err {
+  display: block;
+}
+
+.p-photoEdit--alert {
+  color: red;
+  display: block;
+  text-align: center;
 }
 
 .p-profEdit {

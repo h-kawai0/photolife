@@ -2432,6 +2432,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     // pictureId: {
@@ -38647,6 +38648,8 @@ var render = function() {
               }
             }),
             _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.text.length))]),
+            _vm._v("/500\n    "),
             _c("input", {
               staticClass: "p-detail__btn",
               attrs: { type: "submit", value: "コメントする" },

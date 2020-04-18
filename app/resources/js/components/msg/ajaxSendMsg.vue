@@ -3,6 +3,7 @@
     <div class="p-detail__msg">
       <form method="POST" action class="p-detail__form" v-if="userId">
         <textarea v-model="text" class="p-detail__input"></textarea>
+        <span>{{ text.length }}</span>/500
         <input type="submit" class="p-detail__btn" @click="handleMsgSubmit" value="コメントする" />
       </form>
 
@@ -26,7 +27,7 @@ export default {
   },
   data: function() {
     return {
-      text: ""
+      text: "",
     };
   },
   methods: {

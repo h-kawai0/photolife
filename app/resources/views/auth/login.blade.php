@@ -19,7 +19,7 @@
                 <label>
                     Email
                     <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror"
-                    value="{{ old('email') }}" required autofocus placeholder="Email">
+                    value="{{ old('email') }}" autofocus placeholder="Email">
                 </label>
                     
                 @error('email')
@@ -30,7 +30,7 @@
 
                 <label>
                     パスワード
-                    <input type="password" name="password" class="c-auth__input @error ('password') c-auth--err @enderror" placeholder="パスワード" required>
+                    <input type="password" name="password" class="c-auth__input @error ('password') c-auth--err @enderror" placeholder="パスワード">
                 </label>
 
                 @error('password')

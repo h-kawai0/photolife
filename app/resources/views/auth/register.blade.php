@@ -16,7 +16,7 @@
 
     <label>
         お名前
-        <input type="text" class="c-auth__input @error('name') c-auth--err @enderror" name="name" placeholder="お名前" value="{{ old('name') }}" required autofocus>
+        <input type="text" class="c-auth__input @error('name') c-auth--err @enderror" name="name" placeholder="お名前" value="{{ old('name') }}" autofocus>
     </label>
 
     @error('name')
@@ -25,7 +25,7 @@
 
     <label>
         Email
-        <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email')}}" required placeholder="Email">
+        <input type="text" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email')}}" placeholder="Email">
     </label>
 
     @error('email')
@@ -36,7 +36,7 @@
 
     <label>
         パスワード
-        <input type="password" name="password" class="c-auth__input @error('password') c-auth--err @enderror" required autocomplete="new-password" placeholder="パスワード">
+        <input type="password" name="password" class="c-auth__input @error('password') c-auth--err @enderror" autocomplete="new-password" placeholder="パスワード">
     </label>
 
 @error('password')
@@ -47,8 +47,14 @@
 
 <label>
     パスワード(確認用)
-    <input type="password" name="password_confirmation" class="c-auth__input" required autocomplete="new-password" placeholder="パスワード（確認用）">
+    <input type="password" name="password_confirmation" class="c-auth__input  @error('password_confirmation') c-auth--err @enderror" autocomplete="new-password" placeholder="パスワード（確認用）">
 </label>
+
+@error('password_confirmation')
+<span class="c-auth--alert" role="alert">
+    {{ $message }}
+</span>
+@enderror
 
 <input type="submit" value="登録" class="c-auth__btn">
 
