@@ -16,6 +16,25 @@ class EditPhotoEditRequest extends FormRequest
         return true;
     }
 
+    public function attributes()
+    {
+        $attributes = [];
+
+        foreach( $this->request->get('tags') as $key => $value){
+
+            $tagNumber = $key + 1;
+
+            $attributes = array_merge(
+                $attributes,
+                [
+                    "tags.$key" => "タグ$tagNumber"
+                ]
+                );
+        }
+
+        return $attributes;
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

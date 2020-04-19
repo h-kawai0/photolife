@@ -72,14 +72,14 @@
             
             @else
 
-            @for($i = 0 ; $i < 10; $i++)
+            @for($i = 1; $i <= 10; $i++)
             
             <label>
-                タグ{{$i + 1}}
-                <input type="text" name="tags[]" class="p-photoEdit__input @error('tags.'.($i) ) p-photoEdit--err @enderror" value="{{ old('tags.'.($i) ) }}">
+                タグ{{$i}}
+                <input type="text" name="tags[]" class="p-photoEdit__input @error('tags.'.($i - 1) ) p-photoEdit--err @enderror" value="{{ old('tags.'.($i - 1)) }}">
             </label>
 
-            @error('tags.'.($i) )
+            @error('tags.'.($i - 1) )
             <span class="p-photoEdit--alert">
                 {{ $message }}
             </span>
