@@ -3237,6 +3237,10 @@ img {
   padding-right: 15px;
   box-sizing: border-box;
   text-align: center;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  opacity: 0.9;
 }
 
 .c-flash-enter-active,

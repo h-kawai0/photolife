@@ -13,6 +13,10 @@
     padding-right: $space_l;
     box-sizing: border-box;
     text-align: center;
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    opacity: .9;
     &-enter-active, &-leave-active{
         transition: opacity 1.0s;
     }
