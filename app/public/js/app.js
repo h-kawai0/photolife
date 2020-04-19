@@ -2403,7 +2403,10 @@ __webpack_require__.r(__webpack_exports__);
   // mounted(){
   //   this.getItems();
   // },
-  computed: {}
+  computed: {},
+  mounted: function mounted() {
+    console.log("ほげ");
+  }
 });
 
 /***/ }),
@@ -2433,6 +2436,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     // pictureId: {
@@ -2444,7 +2449,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      text: ""
+      text: "",
+      btnDisabled: true,
+      isValid: false
     };
   },
   methods: {
@@ -2472,6 +2479,19 @@ __webpack_require__.r(__webpack_exports__);
       var val = this.text;
       this.text = "";
       this.$emit('handle-msg-submit', val);
+    }
+  },
+  computed: {
+    validMax: function validMax() {
+      if (this.text.length <= '500') {
+        this.btnDisabled = false;
+        this.isValid = false;
+        return false;
+      } else {
+        this.btnDisabled = true;
+        this.isValid = true;
+        return true;
+      }
     }
   }
 });
@@ -38578,7 +38598,11 @@ var render = function() {
           _c("img", {
             staticClass: "u-avator--radius",
             attrs: {
-              src: "/storage/images/profile/" + comment.user.pic,
+              src:
+                "/storage/images/profile/" +
+                (!(comment.user.pic === "")
+                  ? comment.user.pic
+                  : "default/avatar_default.jpeg"),
               alt: comment.user.name
             }
           }),
@@ -38648,16 +38672,29 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("span", [_vm._v(_vm._s(_vm.text.length))]),
-            _vm._v("/500\n    "),
+            _c("span", { class: { "p-detail__msg--alert": _vm.isValid } }, [
+              _vm._v(_vm._s(_vm.text.length))
+            ]),
+            _vm._v("/500\n\n    "),
+            _vm.validMax
+              ? _c("span", { staticClass: "p-detail__msg--alert" }, [
+                  _vm._v("文字数が超えています。")
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c("input", {
               staticClass: "p-detail__btn",
-              attrs: { type: "submit", value: "コメントする" },
+              class: { "p-detail__btn--isValid": _vm.isValid },
+              attrs: {
+                type: "submit",
+                value: "コメントする",
+                disabled: _vm.btnDisabled
+              },
               on: { click: _vm.handleMsgSubmit }
             })
           ]
         )
-      : _c("div", [
+      : _c("div", { staticClass: "p-detail__unregist" }, [
           _vm._v(
             "\n    ログインすると写真にコメントを投稿することができます。\n  "
           )

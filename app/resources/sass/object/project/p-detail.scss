@@ -120,6 +120,9 @@
     }
     &__msg{
         width: 100%;
+        &--alert{
+            color: $err_color_2;
+        }
     }
     &__form{
         overflow: hidden;
@@ -142,5 +145,17 @@
         padding: $space_m;
         border-radius: 5px;
         cursor: pointer;
+        &--isValid{
+            cursor: not-allowed;
+            background: #c040206e;
+        }
+    }
+    &__unregist{
+        display: block;
+        background: $font-color_sub;
+        text-align: center;
+        padding: $space_m;
+        box-sizing: border-box;
+        margin-bottom: $space_2l;
     }
 }

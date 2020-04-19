@@ -2,7 +2,7 @@
   <div class="p-detail__chat">
     <div class="p-detail__chat-l" v-for="comment in comments" :key="comment.id">
       <a class="p-detail__chat-img">
-        <img class="u-avator--radius" :src="'/storage/images/profile/' + comment.user.pic" :alt="comment.user.name" />
+        <img class="u-avator--radius" :src="'/storage/images/profile/' + (!(comment.user.pic === '') ? comment.user.pic: 'default/avatar_default.jpeg')" :alt="comment.user.name" />
         <p class="p-detail__chat-user">{{ comment.user.name }}</p>
       </a>
 
@@ -58,6 +58,9 @@ export default {
   // },
   computed: {
 
+  },
+  mounted() {
+    console.log("ほげ");
   }
 };
 </script>

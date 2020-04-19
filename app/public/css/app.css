@@ -3497,6 +3497,10 @@ img {
   width: 100%;
 }
 
+.p-detail__msg--alert {
+  color: red;
+}
+
 .p-detail__form {
   overflow: hidden;
 }
@@ -3519,6 +3523,20 @@ img {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.p-detail__btn--isValid {
+  cursor: not-allowed;
+  background: #c040206e;
+}
+
+.p-detail__unregist {
+  display: block;
+  background: #fafafa;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .p-header__title {

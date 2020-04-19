@@ -3,11 +3,13 @@
     <div class="p-detail__msg">
       <form method="POST" action class="p-detail__form" v-if="userId">
         <textarea v-model="text" class="p-detail__input"></textarea>
-        <span>{{ text.length }}</span>/500
-        <input type="submit" class="p-detail__btn" @click="handleMsgSubmit" value="コメントする" />
+        <span :class="{'p-detail__msg--alert': isValid}">{{ text.length }}</span>/500
+
+        <span v-if="validMax" class="p-detail__msg--alert">文字数が超えています。</span>
+        <input type="submit" class="p-detail__btn" :class="{'p-detail__btn--isValid': isValid}" @click="handleMsgSubmit" value="コメントする" :disabled="btnDisabled" />
       </form>
 
-      <div v-else>
+      <div class="p-detail__unregist" v-else>
         ログインすると写真にコメントを投稿することができます。
       </div>
     </div>
@@ -28,6 +30,8 @@ export default {
   data: function() {
     return {
       text: "",
+      btnDisabled: true,
+      isValid: false
     };
   },
   methods: {
@@ -62,6 +66,20 @@ export default {
       this.text = "";
 
       this.$emit('handle-msg-submit', val)
+    }
+  },
+  computed: {
+    validMax: function(){
+
+      if( this.text.length <= '500'){
+        this.btnDisabled = false;
+        this.isValid = false;
+        return false;
+      }else{
+        this.btnDisabled = true;
+        this.isValid = true;
+        return true;
+      }
     }
   }
 };
