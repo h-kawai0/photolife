@@ -56,4 +56,12 @@
         background: $btn-color_main;
         margin-bottom: $space_l;
     }
+    &--err{
+        display: block;
+        background: $err_color;
+    }
+    &--alert{
+        color: $err_color_2;
+        display: block;
+    }
 }

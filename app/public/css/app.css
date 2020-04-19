@@ -3513,6 +3513,7 @@ img {
   height: 100px;
   font-size: 14px;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 .p-detail__btn {
@@ -3826,6 +3827,16 @@ img {
   color: #fafafa;
   background: #226e69;
   margin-bottom: 15px;
+}
+
+.p-profEdit--err {
+  display: block;
+  background: #f7dcd9;
+}
+
+.p-profEdit--alert {
+  color: red;
+  display: block;
 }
 
 .p-search {

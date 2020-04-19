@@ -31,7 +31,7 @@
             <label>名前
                 <input type="text" class="p-profEdit__input @error('name') p-profEdit--err @enderror"
                     value="{{ $errors->has('*') ? old('name'): ($user->name) ?? '' }}" name="name" placeholder="名前"
-                    autofocus required>
+                    autofocus>
             </label>
             @error('name')
             <span class="p-profEdit--alert" role="alert">
@@ -42,7 +42,7 @@
             <label>Email
                 <input type="email" class="p-profEdit__input @error('email') p-profEdit--err @enderror"
                     value="{{ $errors->has('*') ? old('email'): ($user->email) ?? '' }}" name="email"
-                    placeholder="Email" required>
+                    placeholder="Email">
             </label>
             @error('email')
             <span class="p-profEdit--alert" role="alert">

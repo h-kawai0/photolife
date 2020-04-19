@@ -28,9 +28,13 @@ class ProfUpdateMypageController extends Controller
         $user->email = $request->email;
         $user->profile = $request->profile;
 
-        Storage::delete('images/profile/'. $user->pic);
+        if(!empty($request->pic)){
 
-        $user->pic = basename($requestPic);
+            Storage::delete('images/profile/'. $user->pic);
+            $user->pic = basename($requestPic);
+
+        }
+
 
         $user->save();
 
