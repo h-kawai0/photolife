@@ -18,6 +18,7 @@ class CreatePhotoEditController extends Controller
      */
     public function __invoke(CreatePhotoEditRequest $request)
     {
+        dd($request);
         
         $pic = $request->pic->store('images/photo');
 

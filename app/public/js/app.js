@@ -38193,7 +38193,7 @@ var render = function() {
       attrs: { src: _vm.uploadedImage }
     }),
     _vm._v(" "),
-    !_vm.uploadedImage && _vm.picture.id
+    !_vm.uploadedImage && _vm.picture
       ? _c("img", {
           attrs: {
             src: "/storage/images/photo/" + _vm.picture.pic,

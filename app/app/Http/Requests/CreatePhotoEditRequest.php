@@ -16,6 +16,34 @@ class CreatePhotoEditRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        // dd($this->request->get('tags'));
+
+    }
+
+    public function attributes()
+    {
+        $attributes = [];
+
+        foreach( $this->request->get('tags') as $key => $value){
+
+            $tagNumber = $key + 1;
+
+            $attributes = array_merge(
+                $attributes,
+                [
+                    "tags.$key" => "タグ$tagNumber"
+                ]
+                );
+        }
+
+        return $attributes;
+
+
+        
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -26,11 +54,11 @@ class CreatePhotoEditRequest extends FormRequest
         return [
             'pic' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048' ],
             'title' => ['required', 'string', 'max:255'],
-            'detail' => ['string', 'max:255'],
+            'detail' => ['nullable' ,'string', 'max:255'],
 
             // 'tags' => ['required'],
 
-            'tags.*' => ['max:255']
+            'tags.*' => ['nullable', 'string', 'max:255']
 
         ];
     }

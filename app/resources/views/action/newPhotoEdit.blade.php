@@ -10,7 +10,13 @@
 
     <form method="POST" action="{{ route('createPhotoEdit') }}" class="p-photoEdit" enctype="multipart/form-data">
             @csrf
-            <input type="file" name="pic">
+
+            {{-- <input type="file" name="pic">
+            <div class="p-photoEdit__pic">
+            <img src="{{ asset('images/anthony.jpg')}}" alt="">
+            </div> --}}
+
+        <edit-pic></edit-pic>
 
             @error('pic')
             <span class="p-photoEdit--alert">
@@ -18,12 +24,9 @@
             </span>
             @enderror
 
-            <div class="p-photoEdit__pic">
-            <img src="{{ asset('images/anthony.jpg')}}" alt="">
-            </div>
 
             <label>タイトル
-            <input type="text" class="p-photoEdit__input @error('title') p-photoEdit--err @enderror" value="{{ $errors->has('*') ? old('title'): ($picture->title) ?? '' }}" name="title" placeholder="タイトル" autofocus required>
+            <input type="text" class="p-photoEdit__input @error('title') p-photoEdit--err @enderror" value="{{ $errors->has('*') ? old('title'): ($picture->title) ?? '' }}" name="title" placeholder="タイトル" autofocus>
             </label>
 
             @error('title')
@@ -45,10 +48,10 @@
             @for($i = 1; $i <= 10; $i++)
             <label>
                 タグ{{$i}}
-            <input type="text" name="tags[]" class="p-photoEdit__input @error('tags[]'.$i) p-photoEdit--err @enderror" value="{{ old('tags[]'.$i) }}">
-            </label>
+            <input type="text" name="tags[]" class="p-photoEdit__input @error('tags.'.($i - 1) ) p-photoEdit--err @enderror" value="{{ old('tags.'.($i - 1)) }}">
+            </label>    
 
-            @error('tags[]'.$i)
+            @error('tags.'.($i - 1))
             <span class="p-photoEdit--alert">
                 {{ $message }}
             </span>

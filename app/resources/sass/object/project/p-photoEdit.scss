@@ -20,6 +20,9 @@
     }
     &__pic{
         margin-bottom: $space_l;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
     }
     &__input{
         display: block;
@@ -55,10 +58,11 @@
     }
     &--err{
         display: block;
+        background: $err_color;
+
     }
     &--alert{
         color: $err_color_2;
         display: block;
-        text-align: center;
     }
 }

@@ -147,7 +147,13 @@ return [
         'name' => 'お名前',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
-        'password_confirmation' => 'パスワード(確認用)'
+        'password_confirmation' => 'パスワード(確認用)',
+
+        'pic' => '写真',
+        'title' => 'タイトル',
+        'detail' => '本文',
+
+        'tags.*' => 'タグ'
     ],
 
 ];

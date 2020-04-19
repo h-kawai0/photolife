@@ -3701,6 +3701,9 @@ img {
 
 .p-photoEdit__pic {
   margin-bottom: 15px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .p-photoEdit__input {
@@ -3740,12 +3743,12 @@ img {
 
 .p-photoEdit--err {
   display: block;
+  background: #f7dcd9;
 }
 
 .p-photoEdit--alert {
   color: red;
   display: block;
-  text-align: center;
 }
 
 .p-profEdit {
