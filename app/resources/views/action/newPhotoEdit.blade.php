@@ -58,7 +58,7 @@
             @enderror
             @endfor
 
-            <input type="submit" class="p-photoEdit__btn" value="保存">
+            <input type="submit" class="p-photoEdit__btn" value="投稿する">
         </form>
     </article>
     

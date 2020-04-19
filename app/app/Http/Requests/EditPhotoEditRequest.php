@@ -26,8 +26,8 @@ class EditPhotoEditRequest extends FormRequest
         return [
             'pic' => ['file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'title' => ['required', 'string', 'max:255'],
-            'detail' => ['string', 'max:255'],
-            'tags.*' => ['max:255']
+            'detail' => ['nullable', 'string', 'max:255'],
+            'tags.*' => ['nullable', 'string', 'max:255']
 
         ];
     }

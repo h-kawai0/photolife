@@ -32,13 +32,21 @@ class UpdatePhotoEditController extends Controller
 
         $requestPic = (!empty($request->pic)) ? $request->pic->store('images/photo') : '';
 
+        Log::debug($requestPic);
+
         $requestPic = (empty($request->pic) && !empty($picture->pic) ) ? $picture->pic : $requestPic;
+
+        Log::debug($requestPic);
+
         $picture->title = $request->title;
         $picture->detail = $request->detail;
         
-        Storage::delete('images/photo/'. $picture->pic);
+        if(!empty($request->pic)){
 
-        $picture->pic = basename($requestPic);
+            Storage::delete('images/photo/'. $picture->pic);
+            $picture->pic = basename($requestPic);
+        }
+
         $picture->save();
 
         $tags_name = $request->input('tags');
@@ -56,7 +64,7 @@ class UpdatePhotoEditController extends Controller
         }
         $picture->tags()->syncWithoutDetaching($tag_ids);
 
-        return redirect('/mypage');
+        return redirect('/mypage')->with('flash_message', '写真を編集しました!');
 
     }
 }
