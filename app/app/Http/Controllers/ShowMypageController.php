@@ -15,10 +15,6 @@ class ShowMypageController extends Controller
 
         $pictures = Picture::where('user_id', $user->id)->paginate('10');
 
-
-
-
-
         if( !empty($user->pic)){
 
             $is_pic = true;
