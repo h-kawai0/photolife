@@ -155,7 +155,11 @@ return [
 
         'tags.*' => 'タグ',
 
-        'profile' => '自己紹介'
+        'profile' => '自己紹介',
+
+        'pass_old' => '現在のパスワード',
+        'pass_new' => '新しいパスワード',
+        'pass_new_confirmation' => '新しいパスワード(確認用)'
     ],
 
 ];

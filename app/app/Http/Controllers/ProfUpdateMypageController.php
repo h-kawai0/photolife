@@ -38,7 +38,7 @@ class ProfUpdateMypageController extends Controller
 
         $user->save();
 
-        return redirect('/mypage')->with('flash_message', 'マイページを編集しました!');
+        return redirect('/mypage')->with('flash_message', 'プロフィールを編集しました!');
 
 
     }

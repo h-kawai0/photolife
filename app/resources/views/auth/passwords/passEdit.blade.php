@@ -19,7 +19,7 @@
                     @method('put')
                     
                     <label>現在のパスワード
-                        <input type="password" class="c-auth__input @error('pass_old') c-auth--err @enderror" name="pass_old" placeholder="現在のパスワード" autofocus required>
+                        <input type="password" class="c-auth__input @error('pass_old') c-auth--err @enderror" name="pass_old" placeholder="現在のパスワード" autofocus>
                     </label>
                     
                     @error('pass_old')
@@ -29,7 +29,7 @@
                 @enderror
                 
                 <label>新しいパスワード
-                    <input type="password" class="c-auth__input @error('pass_new') c-auth--err @enderror" name="pass_new" placeholder="新しいパスワード" required>
+                    <input type="password" class="c-auth__input @error('pass_new') c-auth--err @enderror" name="pass_new" placeholder="新しいパスワード">
                 </label>
                 
                 @error('pass_new')
@@ -39,7 +39,7 @@
                 @enderror
                 
                 <label>新しいパスワード(確認用)
-                    <input type="password" class="c-auth__input @error('pass_new_confirmation') c-auth--err @enderror" name="pass_new_confirmation" placeholder="新しいパスワード(確認用)" required>
+                    <input type="password" class="c-auth__input @error('pass_new_confirmation') c-auth--err @enderror" name="pass_new_confirmation" placeholder="新しいパスワード(確認用)">
 
                     @error('pass_new_confirmation')
                     <span class="c-auth--alert">

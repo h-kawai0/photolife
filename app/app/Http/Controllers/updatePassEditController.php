@@ -27,6 +27,6 @@ class updatePassEditController extends Controller
         Mail::to($user)
         ->send(new ChangePasswordMail($user));
 
-        return redirect('mypage');
+        return redirect('mypage')->with('flash_message', 'パスワードを変更しました!');
     }
 }

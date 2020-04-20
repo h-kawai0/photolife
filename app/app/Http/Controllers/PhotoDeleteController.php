@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Picture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoDeleteController extends Controller
 {
@@ -22,8 +23,9 @@ class PhotoDeleteController extends Controller
 
         $picture = Picture::find($id);
 
+        Storage::delete('images/photo/'. $picture->pic);
         $picture->delete();
 
-        return redirect('/mypage');
+        return redirect('/mypage')->with('flash_message', '写真を削除しました!');
     }
 }
