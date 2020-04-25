@@ -18,6 +18,8 @@ class AjaxChatRequestController extends Controller
     public function __invoke(Request $request)
     {
 
+        Log::debug(Comment::with('user:id,name,pic')->select('id','user_id','msg','created_at')->where('picture_id',$request['picture_id'])->get());
+
        // return Comment::with('user:id,name,pic')->get();
 
        return Comment::with('user:id,name,pic')->select('id','user_id','msg','created_at')->where('picture_id',$request['picture_id'])->get();

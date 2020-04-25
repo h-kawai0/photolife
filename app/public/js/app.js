@@ -2369,6 +2369,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     pictureId: {
@@ -38594,27 +38598,31 @@ var render = function() {
     { staticClass: "p-detail__chat" },
     _vm._l(_vm.comments, function(comment) {
       return _c("div", { key: comment.id, staticClass: "p-detail__chat-l" }, [
-        _c("a", { staticClass: "p-detail__chat-img" }, [
-          _c("img", {
-            staticClass: "u-avator--radius",
-            attrs: {
-              src:
-                "/storage/images/profile/" +
-                (!(comment.user.pic === "")
-                  ? comment.user.pic
-                  : "default/avatar_default.jpeg"),
-              alt: comment.user.name
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "p-detail__chat-user" }, [
-            _vm._v(_vm._s(comment.user.name))
-          ])
-        ]),
+        comment.user
+          ? _c("div", { staticClass: "p-detail__chat-img" }, [
+              _c("img", {
+                staticClass: "u-avator--radius",
+                attrs: {
+                  src:
+                    "/storage/images/profile/" +
+                    (!(comment.user.pic === "")
+                      ? comment.user.pic
+                      : "default/avatar_default.jpeg"),
+                  alt: comment.user.name
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "p-detail__chat-user" }, [
+                _vm._v(_vm._s(comment.user.name))
+              ])
+            ])
+          : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "p-detail__chat-txt" }, [
-          _c("p", [_vm._v(_vm._s(comment.msg))])
-        ])
+        comment.user
+          ? _c("div", { staticClass: "p-detail__chat-txt" }, [
+              _c("p", [_vm._v(_vm._s(comment.msg))])
+            ])
+          : _vm._e()
       ])
     }),
     0

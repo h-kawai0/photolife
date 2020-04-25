@@ -1,14 +1,18 @@
 <template>
   <div class="p-detail__chat">
     <div class="p-detail__chat-l" v-for="comment in comments" :key="comment.id">
-      <a class="p-detail__chat-img">
+
+      <div class="p-detail__chat-img" v-if="comment.user">
+
         <img class="u-avator--radius" :src="'/storage/images/profile/' + (!(comment.user.pic === '') ? comment.user.pic: 'default/avatar_default.jpeg')" :alt="comment.user.name" />
         <p class="p-detail__chat-user">{{ comment.user.name }}</p>
-      </a>
+      </div>
 
-      <div class="p-detail__chat-txt">
+      <div class="p-detail__chat-txt" v-if="comment.user">
         <p>{{ comment.msg }}</p>
       </div>
+
+
     </div>
   </div>
 </template>

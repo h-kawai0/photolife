@@ -47,6 +47,13 @@
 
         <h1>投稿済みの写真</h1>
 
+        @if($pictures->isEmpty())
+
+        <p>投稿した写真はありません。</p>
+
+        @else
+
+
         <div class="c-panels">
 
             @foreach ($pictures as $picture)
@@ -91,6 +98,11 @@
 
 
         </div>
+
+
+
+        @endif
+
 
         {{ $pictures->links('pagination::default') }}
 
