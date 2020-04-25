@@ -28,7 +28,7 @@
                 <p class="c-auth__desc">入力されたEmailへパスワードリセット用のURLを送信します。</p>
                 <label>
                     Email
-                    <input type="email" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email') }}" required autofocus placeholder="Email">
+                    <input type="email" name="email" class="c-auth__input @error('email') c-auth--err @enderror" value="{{ old('email') }}" autofocus placeholder="Email">
                 </label>
 
             @error('email')
