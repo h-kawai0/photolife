@@ -16,6 +16,7 @@ class AddCascadeOnDeleteToFavorites extends Migration
         Schema::table('favorites', function (Blueprint $table) {
             DB::statement('DELETE FROM favorites');
             $table->dropForeign('favorites_picture_id_foreign');
+            $table->dropForeign('favorites_user_id_foreign');
             $table->foreign('picture_id')->references('id')->on('pictures')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
