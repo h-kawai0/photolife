@@ -1,6 +1,6 @@
 <template>
   <header class="l-header">
-    <a class="p-header__logo" href="/">
+    <a class="p-header__logo" href="/app">
       <h1 class="p-header__title">ふぉとらいふ</h1>
     </a>
 
@@ -13,38 +13,38 @@
     <nav class="p-header__nav" :class="{ 'is-active': active }">
       <ul class="p-header__menu">
         <li class="p-header__item">
-          <a class="p-header__link" href="/">
+          <a class="p-header__link" href="/app">
             <span class="p-header__title u-text--large">ふぉとらいふ</span>
           </a>
         </li>
         <li class="p-header__item">
-          <a class="p-header__link" href="/">TOP</a>
+          <a class="p-header__link" href="/app">TOP</a>
         </li>
 
         <li class="p-header__item" v-if="!user">
-          <a class="p-header__link" href="/login">LOGIN</a>
+          <a class="p-header__link" href="/app/login">LOGIN</a>
         </li>
         <li class="p-header__item" v-if="!user">
-          <a class="p-header__link" href="/register">REGISTER</a>
+          <a class="p-header__link" href="/app/register">REGISTER</a>
         </li>
 
         <li class="p-header__item" v-if="user">
-          <a href="/mypage" class="p-header__link">MYPAGE</a>
+          <a href="/app/mypage" class="p-header__link">MYPAGE</a>
         </li>
         <li class="p-header__item" v-if="user">
           <a
             class="p-header__link"
-            href="/logout"
+            href="/app/logout"
             onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"
           >LOGOUT</a>
 
-          <form id="logout-form" action="/logout" method="POST" style="display: none;">
+          <form id="logout-form" action="/app/logout" method="POST" style="display: none;">
             <input type="hidden" name="_token" :value="csrf" />
           </form>
         </li>
         <li class="p-header__item" v-if="user">
-          <a class="p-header__link" href="/photoedit">EDIT</a>
+          <a class="p-header__link" href="/app/photoedit">EDIT</a>
         </li>
         <li class="p-header__item">
           <a class="p-header__link" href>SEARCH</a>

@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     postFavorite() {
-      let url = "/detail/" + this.picture.id + "/favorite";
+      let url = "/app/detail/" + this.picture.id + "/favorite";
         console.log(url);
       axios
         .post(url, {

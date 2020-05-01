@@ -28,7 +28,7 @@ export default {
     callBackAddMsg(val) {
       console.log(val);
 
-      const url = "/detail/" + this.pictureId + "/send";
+      const url = "/app/detail/" + this.pictureId + "/send";
 
       console.log(url);
 
@@ -47,7 +47,7 @@ export default {
         });
     },
     getItems() {
-      const url = "/detail/" + this.pictureId + "/comments";
+      const url = "/app/detail/" + this.pictureId + "/comments";
 
       console.log(url);
 

@@ -51,7 +51,7 @@ export default {
       // });
 
       axios
-        .get('/index', {
+        .get('/app/index', {
           params: {
             page: this.page,
             sort: this.selected,

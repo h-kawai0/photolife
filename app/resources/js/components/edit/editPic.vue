@@ -3,7 +3,7 @@
 
     <img v-show="uploadedImage" :src="uploadedImage" />
 
-    <img v-if="!uploadedImage && picture" :src="'/storage/images/photo/' + picture.pic" :alt="picture.title">
+    <img v-if="!uploadedImage && picture" :src="'/app/storage/images/photo/' + picture.pic" :alt="picture.title">
 
     <input type="file" name="pic" v-on:change="onFileChange" />
   </div>

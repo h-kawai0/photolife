@@ -4,7 +4,7 @@
 
       <div class="p-detail__chat-img" v-if="comment.user">
 
-        <img class="u-avator--radius" :src="'/storage/images/profile/' + (!(comment.user.pic === '') ? comment.user.pic: 'default/avatar_default.jpeg')" :alt="comment.user.name" />
+        <img class="u-avator--radius" :src="'/app/storage/images/profile/' + (!(comment.user.pic === '') ? comment.user.pic: 'default/avatar_default.jpeg')" :alt="comment.user.name" />
         <p class="p-detail__chat-user">{{ comment.user.name }}</p>
       </div>
 

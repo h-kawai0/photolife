@@ -1,9 +1,9 @@
 <template>
   <div class="c-panels">
     <article class="c-panels__item" v-for="picture in pictures" :key="picture.id">
-      <a :href="'/detail/' + picture.id" class>
+      <a :href="'/app/detail/' + picture.id" class>
         <div class="c-panels__head">
-          <img :src="'storage/images/photo/'+ picture.pic" :alt="picture.title" />
+          <img :src="'/app/storage/images/photo/'+ picture.pic" :alt="picture.title" />
         </div>
       </a>
       <div class="c-panels__body">
@@ -14,7 +14,7 @@
           <a class="c-panels__avator">
             <div class="c-panels__avator-pic">
               <img
-                :src="'/storage/images/profile/' + picture.user.pic"
+                :src="'/app/storage/images/profile/' + picture.user.pic"
                 :alt="picture.user.name"
                 class="u-avator--radius"
               />
