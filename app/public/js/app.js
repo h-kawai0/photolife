@@ -1854,7 +1854,7 @@ __webpack_require__.r(__webpack_exports__);
     postFavorite: function postFavorite() {
       var _this = this;
 
-      var url = "/detail/" + this.picture.id + "/favorite";
+      var url = "/app/detail/" + this.picture.id + "/favorite";
       console.log(url);
       axios.post(url, {
         userId: this.user,
@@ -2201,7 +2201,7 @@ __webpack_require__.r(__webpack_exports__);
       //   console.log('Response: ', response);
       //   return response;
       // });
-      axios.get('/index', {
+      axios.get('/app/index', {
         params: {
           page: this.page,
           sort: this.selected
@@ -2299,7 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       console.log(val);
-      var url = "/detail/" + this.pictureId + "/send";
+      var url = "/app/detail/" + this.pictureId + "/send";
       console.log(url);
       axios.post(url, {
         msg: val,
@@ -2315,7 +2315,7 @@ __webpack_require__.r(__webpack_exports__);
     getItems: function getItems() {
       var _this2 = this;
 
-      var url = "/detail/" + this.pictureId + "/comments";
+      var url = "/app/detail/" + this.pictureId + "/comments";
       console.log(url);
       axios.get(url, {
         params: {
@@ -37975,7 +37975,10 @@ var render = function() {
             ? _c("li", { staticClass: "p-header__item" }, [
                 _c(
                   "a",
-                  { staticClass: "p-header__link", attrs: { href: "/login" } },
+                  {
+                    staticClass: "p-header__link",
+                    attrs: { href: "/app/login" }
+                  },
                   [_vm._v("LOGIN")]
                 )
               ])
@@ -37987,7 +37990,7 @@ var render = function() {
                   "a",
                   {
                     staticClass: "p-header__link",
-                    attrs: { href: "/register" }
+                    attrs: { href: "/app/register" }
                   },
                   [_vm._v("REGISTER")]
                 )
@@ -37998,7 +38001,10 @@ var render = function() {
             ? _c("li", { staticClass: "p-header__item" }, [
                 _c(
                   "a",
-                  { staticClass: "p-header__link", attrs: { href: "/mypage" } },
+                  {
+                    staticClass: "p-header__link",
+                    attrs: { href: "/app/mypage" }
+                  },
                   [_vm._v("MYPAGE")]
                 )
               ])
@@ -38011,7 +38017,7 @@ var render = function() {
                   {
                     staticClass: "p-header__link",
                     attrs: {
-                      href: "/logout",
+                      href: "/app/logout",
                       onclick:
                         "event.preventDefault();\n              document.getElementById('logout-form').submit();"
                     }
@@ -38025,7 +38031,7 @@ var render = function() {
                     staticStyle: { display: "none" },
                     attrs: {
                       id: "logout-form",
-                      action: "/logout",
+                      action: "/app/logout",
                       method: "POST"
                     }
                   },
@@ -38045,7 +38051,7 @@ var render = function() {
                   "a",
                   {
                     staticClass: "p-header__link",
-                    attrs: { href: "/photoedit" }
+                    attrs: { href: "/app/photoedit" }
                   },
                   [_vm._v("EDIT")]
                 )
@@ -38063,7 +38069,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "p-header__logo", attrs: { href: "/" } }, [
+    return _c("a", { staticClass: "p-header__logo", attrs: { href: "/app" } }, [
       _c("h1", { staticClass: "p-header__title" }, [_vm._v("ふぉとらいふ")])
     ])
   },
@@ -38072,7 +38078,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "p-header__item" }, [
-      _c("a", { staticClass: "p-header__link", attrs: { href: "/" } }, [
+      _c("a", { staticClass: "p-header__link", attrs: { href: "/app" } }, [
         _c("span", { staticClass: "p-header__title u-text--large" }, [
           _vm._v("ふぉとらいふ")
         ])
@@ -38084,7 +38090,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "p-header__item" }, [
-      _c("a", { staticClass: "p-header__link", attrs: { href: "/" } }, [
+      _c("a", { staticClass: "p-header__link", attrs: { href: "/app" } }, [
         _vm._v("TOP")
       ])
     ])
@@ -38170,7 +38176,7 @@ var render = function() {
     !_vm.uploadedImage && _vm.user.pic
       ? _c("img", {
           attrs: {
-            src: "/storage/images/profile/" + _vm.user.pic,
+            src: "/app/storage/images/profile/" + _vm.user.pic,
             alt: _vm.user.name
           }
         })
@@ -38220,7 +38226,7 @@ var render = function() {
     !_vm.uploadedImage && _vm.picture
       ? _c("img", {
           attrs: {
-            src: "/storage/images/photo/" + _vm.picture.pic,
+            src: "/app/storage/images/photo/" + _vm.picture.pic,
             alt: _vm.picture.title
           }
         })
@@ -38300,11 +38306,11 @@ var render = function() {
     { staticClass: "c-panels" },
     _vm._l(_vm.pictures, function(picture) {
       return _c("article", { key: picture.id, staticClass: "c-panels__item" }, [
-        _c("a", { attrs: { href: "/detail/" + picture.id } }, [
+        _c("a", { attrs: { href: "/app/detail/" + picture.id } }, [
           _c("div", { staticClass: "c-panels__head" }, [
             _c("img", {
               attrs: {
-                src: "storage/images/photo/" + picture.pic,
+                src: "/app/storage/images/photo/" + picture.pic,
                 alt: picture.title
               }
             })
@@ -38324,7 +38330,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "u-avator--radius",
                   attrs: {
-                    src: "/storage/images/profile/" + picture.user.pic,
+                    src: "/app/storage/images/profile/" + picture.user.pic,
                     alt: picture.user.name
                   }
                 })
@@ -38604,7 +38610,7 @@ var render = function() {
                 staticClass: "u-avator--radius",
                 attrs: {
                   src:
-                    "/storage/images/profile/" +
+                    "/app/storage/images/profile/" +
                     (!(comment.user.pic === "")
                       ? comment.user.pic
                       : "default/avatar_default.jpeg"),
