@@ -12,7 +12,7 @@
 
         <article class="p-detail__item">
             <div class="p-detail__head">
-                <img src="/storage/images/photo/{{ $picture->pic }}" alt="{{ $picture->title }}">
+                <img src="/app/storage/images/photo/{{ $picture->pic }}" alt="{{ $picture->title }}">
             </div>
 
             <div class="p-detail__body">
@@ -27,7 +27,7 @@
             <div class="p-detail__info">
                 <a class="p-detail__avator">
                     <div class="p-detail__avator-pic">
-                        <img src="/storage/images/profile/{{ $picture->user->pic }}" alt="{{ $picture->user->name }}"
+                        <img src="/app/storage/images/profile/{{ $picture->user->pic }}" alt="{{ $picture->user->name }}"
                             class="u-avator--radius">
                     </div>
                     <span class="p-detail__author">{{ $picture->user->name }}</span>

@@ -14,7 +14,7 @@
         <div class="p-mypage__info">
             <div class="p-mypage__avator">
                 <img class="u-avator--radius"
-                    src="@if($is_pic)/storage/images/profile/{{$user->pic}} @else {{asset('images/profile/person.jpeg') }} @endif"
+                    src="@if($is_pic)/app/storage/images/profile/{{$user->pic}} @else {{asset('images/profile/person.jpeg') }} @endif"
                     alt="">
             </div>
             <div class="p-mypage__description">
@@ -61,7 +61,7 @@
             <article class="c-panels__item">
                 <a href="{{ route('detail', $picture->id)}}" class="">
                     <div class="c-panels__head">
-                        <img src="/storage/images/photo/{{$picture->pic }}" alt="{{ $picture->title }}">
+                        <img src="/app/storage/images/photo/{{$picture->pic }}" alt="{{ $picture->title }}">
                     </div>
                 </a>
                 <div class="c-panels__body">
@@ -71,7 +71,7 @@
                     <div class="c-panels__info">
                         <a class="c-panels__avator">
                             <div class="c-panels__avator-pic">
-                                <img src="/storage/images/profile/{{$picture->user->pic }}" alt=""
+                                <img src="/app/storage/images/profile/{{$picture->user->pic }}" alt=""
                                     class="u-avator--radius">
                             </div>
                             <span class="c-panels__author">{{ $picture->user->name }}</span>
